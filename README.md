@@ -13,18 +13,18 @@ Sitio web estático (*HTML + CSS + JS puro*, sin paso de compilación ni depende
 ## ⚙️ Estructura del Proyecto
 
 ```text
-├── index.html                           # Estructura principal y contenido de todas las secciones
+├── index.html                  # Estructura principal y contenido de todas las secciones
 ├── css/
-│   └── styles.css                       # Estilos globales, variables CSS (Modo Claro/Oscuro), layout y responsive
+│   └── styles.css              # Estilos globales, variables CSS (Modo Claro/Oscuro), layout y responsive
 ├── js/
-│   └── script.js                        # Lógica de UI: theme toggler, menú móvil, smooth scroll con offset,
-│                                        # filtro de proyectos por categoría, scroll-spy y botón "Volver arriba"
+│   └── script.js               # Lógica de UI: theme toggler, menú móvil, smooth scroll con offset,
+│                               # filtro de proyectos por categoría, scroll-spy y botón "Volver arriba"
 ├── img/
-│   ├── fondo.svg                        # Fondo decorativo de la sección Perfil (tema claro)
-│   ├── perfil.png                       # Fotografía de perfil principal
-│   ├── proyecto_01.png ...              # Capturas de pantalla de los proyectos
-│   └── icons/                           # Tecnologías e íconos de la sección Habilidades (Power BI, SQL, etc.)
-└── README.md                            # Documentación del proyecto
+│   ├── fondo.svg               # Fondo decorativo de la sección Perfil (tema claro)
+│   ├── perfil.png              # Fotografía de perfil principal
+│   ├── proyecto_01.png ...     # Capturas de pantalla de los proyectos
+│   └── icons/                  # Tecnologías e íconos de la sección Habilidades
+└── README.md                   # Documentación del proyecto
 ```
 
 ---
