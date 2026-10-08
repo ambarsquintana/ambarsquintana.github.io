@@ -42,7 +42,7 @@ Sitio web estático (*HTML + CSS + JS puro*, sin paso de compilación ni depende
 
 ## 👩🏻‍💻 Notas Técnicas & Arquitectura
 
-* **Iconografía:** Los íconos de la interfaz general (menú, flechas, acciones) se consumen desde la CDN de **Lucide Icons** mediante la inicialización dinámica `lucide.createIcons()`. Los íconos técnicos de la sección *Habilidades* son recursos vectoriales locales en `img/icons/`.
+* **Iconografía:** Los íconos de la interfaz general (menú, flechas, acciones) se consumen desde la CDN de **Lucide Icons** mediante la inicialización dinámica `lucide.createIcons()`. Los íconos técnicos de la sección *Habilidades* son recursos vectoriales locales en `assets/img/icons/`.
 * **Tipografía:** Se utiliza **Inter**, importada directamente desde Google Fonts.
 * **Zero-Build Step:** No requiere `npm`, `webpack` ni ningún instalador de paquetes. Para probarlo localmente, basta con clonar el repositorio y abrir `index.html` en cualquier navegador o mediante la extensión *Live Server* de VS Code.
 * **Desplazamiento Preciso:** El script de *Smooth Scroll* calcula dinámicamente la altura del `#site-header` fijo para garantizar que las secciones no queden sobrepuestas tras la navegación por anclas.
