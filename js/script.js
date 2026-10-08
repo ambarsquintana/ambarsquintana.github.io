@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initSmoothScroll();
   initPortfolioFilter();
+  initCardVideos();
   initScrollSpy();
   initScrollTop();
   initIcons();
@@ -96,6 +97,37 @@ function initPortfolioFilter() {
         const show = filter === 'todos' || categories.includes(filter);
         card.classList.toggle('is-hidden', !show);
       });
+    });
+  });
+}
+
+/* ---------- Project cards: play video on hover ---------- */
+function initCardVideos() {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  document.querySelectorAll('.project-card--video').forEach((card) => {
+    const video = card.querySelector('.project-video');
+    if (!video) return;
+
+    card.addEventListener('mouseenter', () => {
+      if (!canHover.matches) return;
+      const playing = video.play();
+      if (playing && typeof playing.catch === 'function') playing.catch(() => {});
+    });
+
+    // Show the video only once it is actually playing, so the image never flashes blank.
+    video.addEventListener('playing', () => {
+      if (card.matches(':hover')) {
+        card.classList.add('is-playing');
+      } else {
+        video.pause();
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('is-playing');
+      video.pause();
+      if (video.readyState > 0) video.currentTime = 0;
     });
   });
 }
