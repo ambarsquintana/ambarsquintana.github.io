@@ -120,12 +120,11 @@
         <button class="filter-btn" data-filter="sql" aria-pressed="false">SQL</button>
         <button class="filter-btn" data-filter="etl" aria-pressed="false">ETL</button>
         <button class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
-        <button class="filter-btn" data-filter="modelado-datos" aria-pressed="false">Modelado de datos</button>
       </div>
 
       <div class="project-grid" id="project-grid">
 
-        <article class="project-card project-card--video" data-category="power-bi python etl modelado-datos">
+        <article class="project-card project-card--video" data-category="power-bi python etl">
           <div class="project-image">
             <img src="img/accidentes-carreteras-card-img.jpg" alt="Dashboard en Power BI de accidentes en carreteras federales de Brasil" loading="lazy" decoding="async">
             <video class="project-video" src="img/accidentes-carreteras-card-video.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -135,7 +134,6 @@
               <span class="project-tag">Power BI</span>
               <span class="project-tag">Python</span>
               <span class="project-tag">ETL</span>
-              <span class="project-tag">Modelado de datos</span>
             </div>
             <h3>Accidentes en Carreteras</h3>
             <p>Solución end-to-end: ETL Medallion en Python, modelo estrella y dashboard en Power BI.</p>
@@ -147,71 +145,6 @@
                 <i data-lucide="github" aria-hidden="true"></i> Ver repositorio
               </a>
             </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="power-bi">
-          <div class="project-image">
-            <img src="img/proyecto_01.png" alt="Captura de pantalla del dashboard de ventas en Power BI con modelo dimensional y medidas DAX" loading="lazy" decoding="async">
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Power BI</span>
-            </div>
-            <h3>Dashboard de Ventas</h3>
-            <p>Dashboard interactivo para análisis de ventas, con modelo dimensional, medidas DAX y RLS.</p>
-            <a href="https://github.com/ambarsquintana/dashboad-ventas" target="_blank" rel="noopener" class="btn btn-dark btn-block">
-              <i data-lucide="github" aria-hidden="true"></i> Ver proyecto
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="etl sql">
-          <div class="project-image">
-            <img src="img/proyecto_02.png" alt="Captura de pantalla del proceso ETL multifuente desarrollado con SSIS" loading="lazy" decoding="async">
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">ETL</span>
-              <span class="project-tag">SQL</span>
-            </div>
-            <h3>Proceso ETL Multifuente</h3>
-            <p>Integración y transformación de datos desde múltiples fuentes, con SSIS y arquitectura multicapa.</p>
-            <a href="https://github.com/ambarsquintana/etl-ssis-multifuente" target="_blank" rel="noopener" class="btn btn-dark btn-block">
-              <i data-lucide="github" aria-hidden="true"></i> Ver proyecto
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="power-bi">
-          <div class="project-image">
-            <img src="img/proyecto_03.png" alt="Captura de pantalla del dashboard de análisis de talento humano en Power BI" loading="lazy" decoding="async">
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Power BI</span>
-            </div>
-            <h3>Análisis de Talento Humano</h3>
-            <p>Dashboard para el área de RRHH con métricas de gestión de personal y análisis de rotación.</p>
-            <a href="https://github.com/ambarsquintana/dashboard-talento-humano" target="_blank" rel="noopener" class="btn btn-dark btn-block">
-              <i data-lucide="github" aria-hidden="true"></i> Ver proyecto
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="modelado-datos">
-          <div class="project-image">
-            <img src="img/proyecto_04.png" alt="Diagrama del modelo dimensional en estrella (Kimball) para almacenamiento de datos" loading="lazy" decoding="async">
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Modelado de datos</span>
-            </div>
-            <h3>Modelo Dimensional (Kimball)</h3>
-            <p>Diseño de modelo en estrella para almacenamiento de datos y generación de reportes optimizados.</p>
-            <a href="https://github.com/ambarsquintana/modelo-datos" target="_blank" rel="noopener" class="btn btn-dark btn-block">
-              <i data-lucide="github" aria-hidden="true"></i> Ver proyecto
-            </a>
           </div>
         </article>
 
@@ -247,7 +180,7 @@
           <img src="img/icons/data-integration.png" alt="Integración de datos" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Integración de datos</h3>
-            <p>SQL Server · PostgreSQL · SharePoint · APIs REST</p>
+            <p>SQL Server · PostgreSQL · SharePoint · APIs</p>
           </div>
         </div>
 
@@ -260,10 +193,10 @@
         </div>
 
         <div class="skill-card">
-          <img src="img/icons/etl.png" alt="SSIS / ETL" class="skill-icon" loading="lazy" decoding="async">
+          <img src="img/icons/etl.png" alt="ETL" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
-            <h3>SSIS / ETL</h3>
-            <p>Limpieza · Transformación · Integración · Arquitecturas multicapa</p>
+            <h3>ETL</h3>
+            <p>Limpieza · Transformación · Integración · Arquitectura · Medallion · SSIS</p>
           </div>
         </div>
 
@@ -279,7 +212,7 @@
           <img src="img/icons/python.png" alt="Python" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Python</h3>
-            <p>Análisis · Pandas · NumPy · Automatización</p>
+            <p>Pandas · NumPy · Jupyter · Análisis · Automatización</p>
           </div>
         </div>
 
@@ -433,7 +366,7 @@
         <p class="eyebrow"><span class="eyebrow-dash">&mdash;&mdash;</span> Sobre mí</p>
         <p>Soy desarrolladora de Business Intelligence e ingeniera de datos para entornos corporativos de alta demanda.</p>
         <p>Durante 9 años he trabajado transformando datos en soluciones que facilitan el análisis y la toma de decisiones. Mi experiencia abarca el diseño de modelos dimensionales, procesos ETL y dashboards en Power BI, siempre con especial atención a la calidad, integridad y gobernanza de los datos.</p>
-        <p>Me motiva convertir datos complejos en información clara y accionable para quienes toman decisiones. Fuera del trabajo, disfruto cuidar de mis bonsáis, hacer senderismo y, cada vez que puedo, visitar el mar — mi lugar favorito en el mundo.</p>
+        <p>Me motiva convertir datos complejos en información clara y accionable para quienes toman decisiones. Fuera del trabajo, disfruto cuidar de mis bonsáis, salir de senderismo, capacitarme en nail art y, cada vez que puedo, visitar el mar — mi lugar favorito en el mundo.</p>
         <a href="https://www.linkedin.com/in/ambarsquintana" target="_blank" rel="noopener" class="btn btn-primary">¿Hablamos?</a>
       </div>
     </div>
