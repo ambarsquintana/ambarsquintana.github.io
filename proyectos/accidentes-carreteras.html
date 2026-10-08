@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PLANTILLA DE PROYECTO
+     Para un proyecto nuevo: copia este archivo, cambia el contenido de cada bloque y conserva
+     las clases. Los ocho bloques van siempre en el mismo orden. -->
+<title>Accidentes en Carreteras — Ambar Quintana</title>
+<meta name="description" content="Proyecto end-to-end de Ambar Quintana: ETL Medallion en Python, modelo estrella y dashboard en Power BI sobre accidentes en carreteras federales de Brasil.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ambarsquintana.github.io/proyectos/accidentes-carreteras.html">
+<link rel="icon" type="image/png" href="../img/icono.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Accidentes en Carreteras — Ambar Quintana">
+<meta property="og:description" content="ETL Medallion en Python, modelo estrella y dashboard en Power BI sobre accidentes en carreteras federales de Brasil.">
+<meta property="og:image" content="https://ambarsquintana.github.io/img/accidentes-carreteras-card-img.jpg">
+<meta property="og:url" content="https://ambarsquintana.github.io/proyectos/accidentes-carreteras.html">
+<meta property="og:locale" content="es_CO">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Accidentes en Carreteras — Ambar Quintana">
+<meta name="twitter:description" content="ETL Medallion en Python, modelo estrella y dashboard en Power BI sobre accidentes en carreteras federales de Brasil.">
+<meta name="twitter:image" content="https://ambarsquintana.github.io/img/accidentes-carreteras-card-img.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/proyecto.css">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
+<script src="../js/script.js" defer></script>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">Ambar <span class="accent-purple">Quintana</span></a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="../index.html#perfil">Inicio</a>
+      <a href="../index.html#portafolio" class="is-active" aria-current="page">Proyectos</a>
+      <a href="../index.html#habilidades">Habilidades</a>
+      <a href="../index.html#experiencia">Experiencia</a>
+      <a href="../index.html#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+        <i data-lucide="moon" class="icon-moon" aria-hidden="true"></i>
+        <i data-lucide="sun" class="icon-sun" aria-hidden="true"></i>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="pj">
+
+  <!-- ===================== 1. ENCABEZADO ===================== -->
+  <section class="pj-hero">
+    <div class="container">
+      <a href="../index.html#portafolio" class="pj-back">
+        <i data-lucide="arrow-left" aria-hidden="true"></i> Proyectos
+      </a>
+
+      <h1 class="pj-title">Accidentes en <span class="accent-purple">Carreteras</span></h1>
+      <p class="pj-lead">Muestra cuándo, dónde y por qué ocurren los accidentes en las carreteras federales del sudeste de Brasil, para decidir las rutas de una expansión logística.</p>
+
+      <ul class="pj-tags" aria-label="Tecnologías">
+        <li class="project-tag">Power BI</li>
+        <li class="project-tag">DAX</li>
+        <li class="project-tag">Python</li>
+        <li class="project-tag">pandas</li>
+        <li class="project-tag">Parquet</li>
+        <li class="project-tag">PBIP</li>
+        <li class="project-tag">Git</li>
+      </ul>
+
+      <div class="pj-hero-actions">
+        <a href="https://github.com/ambarsquintana/dashboard-accidentes-carreteras" target="_blank" rel="noopener" class="btn btn-primary">
+          <i data-lucide="github" aria-hidden="true"></i> Ver repositorio
+        </a>
+        <dl class="pj-facts">
+          <div><dt>60.531</dt><dd>accidentes</dd></div>
+          <div><dt>2018–2020</dt><dd>periodo</dd></div>
+          <div><dt>4</dt><dd>estados</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. DASHBOARD ===================== -->
+  <section class="pj-dashboard" aria-label="Dashboard">
+    <div class="container">
+      <div class="pj-embed">
+        <iframe title="Dashboard de accidentes en carreteras" src="https://app.powerbi.com/view?r=eyJrIjoiNWRjZjA5YjAtOTE0Ny00OTZiLWFhMWUtMTkwNGM3YWI2OGUzIiwidCI6IjIyYzMxOWJlLWZhNzctNDQ0NS1iZDhkLTljMjY4MDg2ZGYxNiIsImMiOjR9&pageName=82f4b55d0bd4e33c8d04" loading="lazy" allowfullscreen></iframe>
+        <!-- Proyectos con RLS: reemplaza el iframe por un video con la misma proporción.
+        <video src="../img/NOMBRE-video.mp4" poster="../img/NOMBRE-img.jpg" controls muted playsinline preload="metadata"></video>
+        -->
+      </div>
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiNWRjZjA5YjAtOTE0Ny00OTZiLWFhMWUtMTkwNGM3YWI2OGUzIiwidCI6IjIyYzMxOWJlLWZhNzctNDQ0NS1iZDhkLTljMjY4MDg2ZGYxNiIsImMiOjR9&pageName=82f4b55d0bd4e33c8d04" target="_blank" rel="noopener" class="pj-fullscreen">
+        <i data-lucide="maximize-2" aria-hidden="true"></i> Abrir en pantalla completa
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== 3. CASO DE NEGOCIO ===================== -->
+  <section class="pj-section" id="caso">
+    <div class="container pj-narrow">
+      <p class="pj-eyebrow"><span>03</span> Caso de negocio</p>
+      <h2 class="pj-h2">El problema</h2>
+      <p class="pj-text">Una empresa de logística evalúa expandir su operación al sudeste de Brasil. Su equipo de seguridad encontró que las carreteras federales concentran la mayor cantidad de accidentes, y la Dirección pidió una vista única de 2018 a 2020 antes de definir las rutas.</p>
+      <ul class="pj-questions">
+        <li>¿A qué horas y qué días ocurren más accidentes?</li>
+        <li>¿En qué estados y puntos del mapa se concentran?</li>
+        <li>¿Cuáles son las cinco causas principales?</li>
+        <li>¿Cuántos fallecidos y heridos dejan?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== 4. ARQUITECTURA ===================== -->
+  <section class="pj-section pj-section--alt" id="arquitectura">
+    <div class="container">
+      <p class="pj-eyebrow"><span>04</span> Arquitectura</p>
+      <h2 class="pj-h2">De Excel al reporte</h2>
+      <p class="pj-text pj-narrow">Arquitectura Medallion con notebooks de Python. Cada capa valida sus datos antes de escribir.</p>
+
+      <ol class="pj-flow">
+        <li class="pj-flow-step">
+          <span class="pj-flow-name">Excel</span>
+          <span class="pj-flow-format">Fuente</span>
+          <p>Archivo tal como se recibió. No se modifica.</p>
+        </li>
+        <li class="pj-flow-step">
+          <span class="pj-flow-name">Bronze</span>
+          <span class="pj-flow-format">Parquet</span>
+          <p>Copia fiel de la fuente con columnas de auditoría.</p>
+        </li>
+        <li class="pj-flow-step">
+          <span class="pj-flow-name">Silver</span>
+          <span class="pj-flow-format">Parquet</span>
+          <p>Datos limpios y tipados con las reglas que salieron del perfilado.</p>
+        </li>
+        <li class="pj-flow-step">
+          <span class="pj-flow-name">Gold</span>
+          <span class="pj-flow-format">Parquet</span>
+          <p>Modelo estrella: un hecho de accidentes y cinco dimensiones.</p>
+        </li>
+        <li class="pj-flow-step">
+          <span class="pj-flow-name">Modelo semántico</span>
+          <span class="pj-flow-format">Power BI · PBIP</span>
+          <p>Relaciones y medidas DAX sobre las tablas de gold.</p>
+        </li>
+        <li class="pj-flow-step">
+          <span class="pj-flow-name">Reporte</span>
+          <span class="pj-flow-format">Power BI</span>
+          <p>Una página con filtros por año y clasificación del accidente.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== 5. MODELO DE DATOS ===================== -->
+  <section class="pj-section" id="modelo">
+    <div class="container">
+      <p class="pj-eyebrow"><span>05</span> Modelo de datos</p>
+      <h2 class="pj-h2">Modelo estrella</h2>
+      <p class="pj-text pj-narrow">Un hecho, <code>fact_accidentes</code>, con un accidente por fila, y cinco dimensiones: calendario, hora, ubicación, causa y características.</p>
+
+      <figure class="pj-figure">
+        <a href="../img/accidentes-carreteras-modelo-datos.jpg" target="_blank" rel="noopener" class="pj-figure-link">
+          <img src="../img/accidentes-carreteras-modelo-datos.jpg" alt="Modelo estrella en Power BI: fact_accidentes al centro, relacionada con dim_calendario, dim_hora, dim_ubicacion, dim_causa y dim_caracteristicas" width="1213" height="763" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="pj-caption">Relaciones de uno a muchos, de cada dimensión al hecho. Las llaves quedan ocultas en el reporte.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== 6. DECISIONES TÉCNICAS ===================== -->
+  <section class="pj-section pj-section--alt pj-decisions" id="decisiones">
+    <div class="container">
+      <p class="pj-eyebrow"><span>06</span> Decisiones técnicas</p>
+      <h2 class="pj-h2">Qué decidí y por qué</h2>
+
+      <div class="pj-decision-grid">
+        <article class="pj-decision">
+          <span class="pj-decision-num">01</span>
+          <h3>Power BI lee solo de gold</h3>
+          <p><strong>Por qué:</strong> la lógica de transformación queda en el ETL, en un solo lugar y versionada. El modelo semántico solo relaciona y calcula.</p>
+        </article>
+
+        <article class="pj-decision">
+          <span class="pj-decision-num">02</span>
+          <h3>Validaciones que detienen el proceso</h3>
+          <p><strong>Por qué:</strong> cada capa revisa sus reglas antes de escribir. Si una falla, el notebook se detiene y no genera el archivo, así un dato que no cumple no llega al reporte.</p>
+        </article>
+
+        <article class="pj-decision">
+          <span class="pj-decision-num">03</span>
+          <h3>Reporte en PBIP y no en PBIX</h3>
+          <p><strong>Por qué:</strong> el modelo y el reporte quedan como texto, y Git muestra qué cambió en cada medida, relación o visual.</p>
+        </article>
+
+        <article class="pj-decision">
+          <span class="pj-decision-num">04</span>
+          <h3>pandas y Parquet, sin motor distribuido</h3>
+          <p><strong>Por qué:</strong> con 60.531 filas un motor distribuido no aporta nada. La lógica queda escrita de forma que se puede llevar a PySpark.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. HALLAZGOS ===================== -->
+  <section class="pj-section" id="hallazgos">
+    <div class="container">
+      <p class="pj-eyebrow"><span>07</span> Hallazgos</p>
+      <h2 class="pj-h2">Lo que muestran los datos</h2>
+
+      <div class="pj-findings">
+        <article class="pj-finding">
+          <p class="pj-finding-value">48 %</p>
+          <p class="pj-finding-label">de los accidentes ocurre de viernes a domingo</p>
+          <h3>Fin de semana y fin de año concentran el riesgo</h3>
+          <p>Diciembre y enero son los meses pico (5.931 y 5.630 eventos), y el domingo es el día con más accidentes.</p>
+        </article>
+
+        <article class="pj-finding">
+          <p class="pj-finding-value">54 %</p>
+          <p class="pj-finding-label">de los accidentes mortales ocurre en carril simple</p>
+          <h3>Menos accidentes, pero más mortales</h3>
+          <p>El carril doble registra más eventos (28 mil contra 25 mil), pero solo el 39 % de los mortales.</p>
+        </article>
+
+        <article class="pj-finding">
+          <p class="pj-finding-value">537</p>
+          <p class="pj-finding-label">accidentes mortales por falta de atención de los peatones</p>
+          <h3>Una causa que el total esconde</h3>
+          <p>No entra en el top 5 general, pero es la tercera causa cuando hay víctimas fatales.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. CIERRE ===================== -->
+  <section class="pj-section pj-section--alt pj-closing">
+    <div class="container">
+      <div class="pj-closing-card">
+        <h2 class="pj-h2">El detalle está en el repositorio</h2>
+        <p class="pj-text">Requerimientos, arquitectura, mapeo fuente-destino, diccionario de datos y los notebooks de cada capa.</p>
+        <a href="https://github.com/ambarsquintana/dashboard-accidentes-carreteras" target="_blank" rel="noopener" class="btn btn-primary">
+          <i data-lucide="github" aria-hidden="true"></i> Ver repositorio
+        </a>
+      </div>
+
+      <p class="pj-credits">
+        Datos, caso de negocio, plantilla visual y versión original del dashboard: inmersión «Acelerador de Carrera con Power BI» de
+        <a href="https://www.daxus.com/" target="_blank" rel="noopener">DaxusLatam</a>, impartida por la
+        <a href="https://www.instagram.com/profe.zaki" target="_blank" rel="noopener">Profe Zaira Hurtado</a>.
+        Este proyecto es un trabajo independiente, sin vínculo con DaxusLatam.
+      </p>
+
+      <nav class="pj-pager" aria-label="Navegación entre proyectos">
+        <!-- Cuando exista otro proyecto, cambia este enlace por:
+        <a href="NOMBRE.html" class="pj-pager-link pj-pager-link--next">Siguiente proyecto <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        -->
+        <a href="../index.html#portafolio" class="pj-pager-link">
+          <i data-lucide="arrow-left" aria-hidden="true"></i> Volver a proyectos
+        </a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-col footer-about">
+      <h4 class="footer-name">Ambar <span class="accent-purple">Quintana</span></h4>
+      <p class="footer-role">Business Intelligence Developer</p>
+      <p class="footer-tagline">Transformo datos en información que apoya la toma de decisiones</p>
+      <div class="footer-social-icons">
+        <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i data-lucide="linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" aria-label="GitHub">
+          <i data-lucide="github" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:ambarsquintana@gmail.com" aria-label="Correo">
+          <i data-lucide="mail" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col footer-pages">
+      <h4>ENLACES</h4>
+      <a href="../index.html#perfil">Inicio</a>
+      <a href="../index.html#portafolio">Proyectos</a>
+      <a href="../index.html#habilidades">Habilidades</a>
+      <a href="../index.html#experiencia">Experiencia</a>
+    </div>
+    <div class="footer-col footer-social">
+      <h4>CONTACTO</h4>
+      <p class="footer-contact-item"><i data-lucide="map-pin" aria-hidden="true"></i> Colombia</p>
+      <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="footer-contact-item">
+        <i data-lucide="link" aria-hidden="true"></i> LinkedIn
+      </a>
+      <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="footer-contact-item">
+        <i data-lucide="github" aria-hidden="true"></i> GitHub
+      </a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="footer-copyright">© 2026 Ambar Quintana · Todos los derechos reservados</p>
+    <button id="scroll-top" class="scroll-top-btn" type="button" aria-label="Volver arriba">
+      <i data-lucide="arrow-up" aria-hidden="true"></i>
+    </button>
+  </div>
+</footer>
+
+</body>
+</html>

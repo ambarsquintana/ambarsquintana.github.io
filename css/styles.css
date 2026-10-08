@@ -461,6 +461,44 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
 .project-body h3 { font-size: 14px; font-weight: 700; }
 .project-body p { font-size: 12px; line-height: 1.55; color: var(--color-text-secondary); flex: 1; }
 
+/* Tarjeta con video en hover */
+.project-card--video .project-image { position: relative; }
+.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+.project-card--video.is-playing .project-video { opacity: 1; }
+@media (hover: none), (pointer: coarse) {
+  .project-video { display: none; }
+}
+
+/* Dos botones en una fila */
+.project-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  container-type: inline-size;
+}
+.project-actions .btn {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 11px;
+  padding: 9px 6px;
+  gap: 5px;
+}
+.project-actions .btn i,
+.project-actions .btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+@container (max-width: 205px) {
+  .project-actions .btn i,
+  .project-actions .btn svg { display: none; }
+}
+
 /* ---------- Habilidades ---------- */
 .skills-grid {
   display: grid;
