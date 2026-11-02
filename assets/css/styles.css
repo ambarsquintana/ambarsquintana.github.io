@@ -388,30 +388,6 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
 }
 
 /* ---------- Portafolio ---------- */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.filter-btn {
-  padding: 9px 20px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-  background: var(--color-card);
-  color: var(--color-text-secondary);
-  font-weight: 600;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all .15s ease;
-}
-.filter-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
-.filter-btn.is-active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -426,9 +402,10 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
   flex-direction: column;
   box-shadow: var(--shadow-sm);
   transition: box-shadow .2s ease, transform .2s ease;
+  position: relative;
+  cursor: pointer;
 }
-.project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.project-card.is-hidden { display: none; }
+.project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 
 .project-image {
   aspect-ratio: 2 / 1;
@@ -482,12 +459,28 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
   .project-video { display: none; }
 }
 
-/* Dos botones en una fila */
+/* Tarjeta completa clicable (stretched link) */
+.project-card .project-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+/* Sin transform en el enlace: si no, el ::after quedaría contenido en el botón */
+.project-card .project-link:hover { transform: none; }
+.project-card:hover .project-link { background: var(--color-primary); color: #fff; }
+.project-card .project-link:focus-visible { outline: none; }
+.project-card:has(.project-link:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Botón de la tarjeta */
 .project-actions {
   display: flex;
   gap: 6px;
   margin-top: 10px;
-  container-type: inline-size;
 }
 .project-actions .btn {
   flex: 1 1 auto;
@@ -498,10 +491,6 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
 }
 .project-actions .btn i,
 .project-actions .btn svg { width: 14px; height: 14px; flex-shrink: 0; }
-@container (max-width: 205px) {
-  .project-actions .btn i,
-  .project-actions .btn svg { display: none; }
-}
 
 /* ---------- Habilidades ---------- */
 .skills-grid {
@@ -584,6 +573,19 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
   text-transform: uppercase;
   color: var(--color-text-secondary);
   margin-bottom: 15px;
+}
+.timeline-content .location .industry {
+  font: inherit;
+  letter-spacing: inherit;
+  color: color-mix(in srgb, var(--color-primary) 80%, var(--color-text-secondary));
+}
+.timeline-content .location .industry svg,
+.timeline-content .location .industry i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  vertical-align: -2px;
 }
 .timeline-content .achievements {
   display: flex;
