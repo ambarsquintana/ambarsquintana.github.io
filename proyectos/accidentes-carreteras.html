@@ -212,7 +212,7 @@
         <article class="pj-decision">
           <span class="pj-decision-num">04</span>
           <h3>pandas en lugar de Spark</h3>
-          <p><strong>Por qué:</strong> el dataset tiene 60.531 filas y cabe completo en memoria. Spark tiene sentido con millones de registros; aquí solo sumaba complejidad. Cada capa se guarda en Parquet y las transformaciones están escritas para poder migrarlas a PySpark.</p>
+          <p><strong>Por qué:</strong> Spark conviene con millones de registros; con 60.531 filas solo sumaba complejidad. Guardé cada capa en Parquet y escribí el código para migrar a PySpark si los datos crecen.</p>
         </article>
       </div>
     </div>
