@@ -114,7 +114,7 @@
   <!-- ===================== 3. CASO DE NEGOCIO ===================== -->
   <section class="pj-section" id="caso">
     <div class="container pj-narrow">
-      <p class="pj-eyebrow"><span>03</span> Caso de negocio</p>
+      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> CASO DE NEGOCIO</p>
       <h2 class="pj-h2">El problema</h2>
       <p class="pj-text">Una empresa de logística evalúa expandir su operación al sudeste de Brasil. Su equipo de seguridad encontró que las carreteras federales concentran la mayor cantidad de accidentes, y la Dirección pidió una vista única de 2018 a 2020 antes de definir las rutas.</p>
       <ul class="pj-questions">
@@ -129,7 +129,7 @@
   <!-- ===================== 4. ARQUITECTURA ===================== -->
   <section class="pj-section pj-section--alt" id="arquitectura">
     <div class="container">
-      <p class="pj-eyebrow"><span>04</span> Arquitectura</p>
+      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> ARQUITECTURA</p>
       <h2 class="pj-h2">De Excel al reporte</h2>
       <p class="pj-text pj-narrow">Arquitectura Medallion con notebooks de Python. Cada capa valida sus datos antes de escribir.</p>
 
@@ -171,7 +171,7 @@
   <!-- ===================== 5. MODELO DE DATOS ===================== -->
   <section class="pj-section" id="modelo">
     <div class="container">
-      <p class="pj-eyebrow"><span>05</span> Modelo de datos</p>
+      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> MODELO DE DATOS</p>
       <h2 class="pj-h2">Modelo estrella</h2>
       <p class="pj-text pj-narrow">Un hecho, <code>fact_accidentes</code>, con un accidente por fila, y cinco dimensiones: calendario, hora, ubicación, causa y características.</p>
 
@@ -187,7 +187,7 @@
   <!-- ===================== 6. DECISIONES TÉCNICAS ===================== -->
   <section class="pj-section pj-section--alt pj-decisions" id="decisiones">
     <div class="container">
-      <p class="pj-eyebrow"><span>06</span> Decisiones técnicas</p>
+      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> DECISIONES TÉCNICAS</p>
       <h2 class="pj-h2">Qué decidí y por qué</h2>
 
       <div class="pj-decision-grid">
@@ -211,8 +211,8 @@
 
         <article class="pj-decision">
           <span class="pj-decision-num">04</span>
-          <h3>pandas y Parquet, sin motor distribuido</h3>
-          <p><strong>Por qué:</strong> con 60.531 filas un motor distribuido no aporta nada. La lógica queda escrita de forma que se puede llevar a PySpark.</p>
+          <h3>pandas en lugar de Spark</h3>
+          <p><strong>Por qué:</strong> Spark conviene con millones de registros; con 60.531 filas solo sumaba complejidad. Guardé cada capa en Parquet y escribí el código para migrar a PySpark si los datos crecen.</p>
         </article>
       </div>
     </div>
@@ -221,7 +221,7 @@
   <!-- ===================== 7. HALLAZGOS ===================== -->
   <section class="pj-section" id="hallazgos">
     <div class="container">
-      <p class="pj-eyebrow"><span>07</span> Hallazgos</p>
+      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> HALLAZGOS</p>
       <h2 class="pj-h2">Lo que muestran los datos</h2>
 
       <div class="pj-findings">
@@ -269,9 +269,9 @@
 
       <nav class="pj-pager" aria-label="Navegación entre proyectos">
         <!-- Cuando exista otro proyecto, cambia este enlace por:
-        <a href="NOMBRE.html" class="pj-pager-link pj-pager-link--next">Siguiente proyecto <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        <a href="NOMBRE.html" class="btn btn-secondary">Siguiente proyecto <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         -->
-        <a href="../index.html#portafolio" class="pj-pager-link">
+        <a href="../index.html#portafolio" class="btn btn-secondary">
           <i data-lucide="arrow-left" aria-hidden="true"></i> Volver a proyectos
         </a>
       </nav>
@@ -300,10 +300,12 @@
     </div>
     <div class="footer-col footer-pages">
       <h4>ENLACES</h4>
-      <a href="../index.html#perfil">Inicio</a>
-      <a href="../index.html#portafolio">Proyectos</a>
-      <a href="../index.html#habilidades">Habilidades</a>
-      <a href="../index.html#experiencia">Experiencia</a>
+      <a href="#top">Dashboard</a>
+      <a href="#caso">Caso de negocio</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#modelo">Modelo de datos</a>
+      <a href="#decisiones">Decisiones técnicas</a>
+      <a href="#hallazgos">Hallazgos</a>
     </div>
     <div class="footer-col footer-social">
       <h4>CONTACTO</h4>

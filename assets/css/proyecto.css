@@ -4,11 +4,23 @@
    ========================================================= */
 
 .pj-narrow { max-width: 720px; }
+/* Un contenedor angosto conserva el borde izquierdo del resto de secciones */
+.container.pj-narrow { max-width: 1160px; }
+.container.pj-narrow > * { max-width: 720px; }
 
 /* ---------- 1. Encabezado ---------- */
 .pj-hero {
-  padding: 48px 0 32px;
-  background: var(--color-bg);
+  padding: 48px 0 40px;
+  /* Mismo fondo que el perfil del inicio */
+  background-color: var(--color-bg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), url('../img/fondo.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+:root[data-theme="dark"] .pj-hero { background-image: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pj-hero { background-image: none; }
 }
 .pj-back {
   display: inline-flex;
@@ -24,15 +36,15 @@
 .pj-back i { width: 15px; height: 15px; }
 
 .pj-title {
-  font-size: clamp(30px, 4.5vw, 46px);
+  font-size: clamp(32px, 4vw, 44px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 14px;
 }
 .pj-lead {
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 16.5px;
+  line-height: 1.65;
   color: var(--color-text-secondary);
   max-width: 720px;
   margin-bottom: 20px;
@@ -41,7 +53,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 .pj-tags .project-tag { font-size: 11px; }
 
@@ -54,10 +66,9 @@
 .pj-facts {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 16px 48px;
 }
-.pj-facts div { display: flex; align-items: baseline; gap: 6px; }
-.pj-facts dt { font-size: 18px; font-weight: 800; color: var(--color-primary); }
+.pj-facts dt { font-size: 24px; font-weight: 800; color: var(--color-primary); margin-bottom: 4px; }
 .pj-facts dd { font-size: 13px; color: var(--color-text-muted); }
 
 /* ---------- 2. Dashboard ---------- */
@@ -98,26 +109,11 @@
 .pj-fullscreen i { width: 15px; height: 15px; }
 
 /* ---------- Secciones ---------- */
-.pj-section { padding: 80px 0; background: var(--color-bg); }
+.pj-section { padding: 96px 0; background: var(--color-bg); }
 .pj-section--alt { background: var(--color-bg-alt); }
 
-.pj-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 10px;
-}
-.pj-eyebrow span {
-  color: var(--color-text-muted);
-  font-variant-numeric: tabular-nums;
-}
 .pj-h2 {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: clamp(28px, 4vw, 38px);
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
@@ -151,7 +147,8 @@
   line-height: 1.5;
   background: var(--color-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 .pj-questions li::before {
   content: '?';
@@ -189,7 +186,7 @@
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-top: 3px solid var(--color-primary);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
 .pj-flow-step:not(:last-child)::after {
@@ -383,21 +380,10 @@
 .pj-pager {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 32px;
 }
-.pj-pager-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text);
-  padding: 10px 4px;
-  border-bottom: 2px solid var(--color-primary);
-  transition: color .15s ease;
-}
-.pj-pager-link:hover { color: var(--color-primary); }
-.pj-pager-link i { width: 16px; height: 16px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
@@ -413,8 +399,9 @@
 @media (max-width: 720px) {
   .pj-hero { padding-top: 32px; }
   .pj-lead { font-size: 16px; }
+  .pj-facts { gap: 16px 28px; }
   .pj-dashboard { padding-bottom: 48px; }
-  .pj-section { padding: 56px 0; }
+  .pj-section { padding: 64px 0; }
   .pj-questions { grid-template-columns: 1fr; }
 
   .pj-flow { grid-template-columns: 1fr; gap: 26px; }
