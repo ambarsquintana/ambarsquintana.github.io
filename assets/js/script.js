@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initMobileNav();
   initSmoothScroll();
-  initPortfolioFilter();
   initCardVideos();
   initScrollSpy();
   initScrollTop();
@@ -71,32 +70,6 @@ function initSmoothScroll() {
       const headerHeight = header ? header.offsetHeight : 0;
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
       window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    });
-  });
-}
-
-/* ---------- Portfolio category filter ---------- */
-function initPortfolioFilter() {
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
-  if (!buttons.length || !cards.length) return;
-
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      buttons.forEach((b) => {
-        b.classList.remove('is-active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.classList.add('is-active');
-      btn.setAttribute('aria-pressed', 'true');
-
-      const filter = btn.dataset.filter;
-
-      cards.forEach((card) => {
-        const categories = (card.dataset.category || '').split(' ');
-        const show = filter === 'todos' || categories.includes(filter);
-        card.classList.toggle('is-hidden', !show);
-      });
     });
   });
 }
