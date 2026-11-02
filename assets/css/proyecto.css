@@ -53,7 +53,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 .pj-tags .project-tag { font-size: 11px; }
 

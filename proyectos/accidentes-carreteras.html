@@ -211,8 +211,8 @@
 
         <article class="pj-decision">
           <span class="pj-decision-num">04</span>
-          <h3>pandas y Parquet, sin motor distribuido</h3>
-          <p><strong>Por qué:</strong> con 60.531 filas un motor distribuido no aporta nada. La lógica queda escrita de forma que se puede llevar a PySpark.</p>
+          <h3>pandas en lugar de Spark</h3>
+          <p><strong>Por qué:</strong> el dataset tiene 60.531 filas y cabe completo en memoria. Spark tiene sentido con millones de registros; aquí solo sumaba complejidad. Cada capa se guarda en Parquet y las transformaciones están escritas para poder migrarlas a PySpark.</p>
         </article>
       </div>
     </div>
@@ -300,10 +300,12 @@
     </div>
     <div class="footer-col footer-pages">
       <h4>ENLACES</h4>
-      <a href="../index.html#perfil">Inicio</a>
-      <a href="../index.html#portafolio">Proyectos</a>
-      <a href="../index.html#habilidades">Habilidades</a>
-      <a href="../index.html#experiencia">Experiencia</a>
+      <a href="#top">Dashboard</a>
+      <a href="#caso">Caso de negocio</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#modelo">Modelo de datos</a>
+      <a href="#decisiones">Decisiones técnicas</a>
+      <a href="#hallazgos">Hallazgos</a>
     </div>
     <div class="footer-col footer-social">
       <h4>CONTACTO</h4>
