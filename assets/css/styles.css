@@ -615,13 +615,22 @@ h1, h2, h3, h4, p, dl, dd { margin: 0; }
   align-items: stretch;
 }
 .contacto-photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 20px; height: 100%; }
-.contacto-photo {
+.contacto-photo-frame {
   width: 100%;
   flex: 1;
   min-height: 0;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
+}
+/* Zoom a la foto sin cambiar el tamaño del recuadro */
+.contacto-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transform-origin: 50% 8%;
 }
 .contacto-social { display: flex; gap: 12px; }
 .social-btn {
@@ -819,7 +828,7 @@ p.footer-tagline { font-size: 14px; line-height: 1.6; margin-top: 0; margin-bott
 
   .contacto-grid { grid-template-columns: 1fr; }
   .contacto-photo-wrap { flex-direction: row; height: auto; }
-  .contacto-photo { width: 160px; flex: none; aspect-ratio: 1 / 1; }
+  .contacto-photo-frame { width: 160px; flex: none; aspect-ratio: 1 / 1; }
 
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   .footer-about { grid-column: 1 / -1; }
@@ -849,7 +858,7 @@ p.footer-tagline { font-size: 14px; line-height: 1.6; margin-top: 0; margin-bott
   .section { padding: 64px 0; }
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .contacto-photo-wrap { flex-direction: column; height: auto; }
-  .contacto-photo { width: 200px; flex: none; aspect-ratio: 1 / 1; }
+  .contacto-photo-frame { width: 200px; flex: none; aspect-ratio: 1 / 1; }
 
   .project-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
