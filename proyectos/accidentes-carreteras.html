@@ -37,22 +37,31 @@
 </head>
 <body id="top">
 
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
 <header class="site-header">
   <div class="container header-inner">
-    <a href="../index.html" class="logo">Ambar <span class="accent-purple">Quintana</span></a>
+    <a href="../index.html" class="logo">
+      <img src="../assets/img/icono.png" alt="" class="logo-icon" width="26" height="26" decoding="async">
+      <span>Ambar <span class="accent-purple">Quintana</span></span>
+    </a>
 
     <nav class="main-nav" aria-label="Navegación principal">
-      <a href="../index.html#perfil">Inicio</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
       <a href="../index.html#portafolio" class="is-active" aria-current="page">Proyectos</a>
-      <a href="../index.html#habilidades">Habilidades</a>
       <a href="../index.html#experiencia">Experiencia</a>
-      <a href="../index.html#contacto">Contacto</a>
+      <a href="../index.html#habilidades">Habilidades</a>
+      <a href="../index.html#certificaciones">Certificaciones</a>
+      <a href="#contacto" data-no-spy>Contacto</a>
     </nav>
 
     <div class="header-actions">
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
-        <i data-lucide="moon" class="icon-moon" aria-hidden="true"></i>
-        <i data-lucide="sun" class="icon-sun" aria-hidden="true"></i>
+      <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Tema oscuro">
+        <span class="theme-switch-track" aria-hidden="true">
+          <i data-lucide="sun" class="theme-switch-icon theme-switch-icon--sun"></i>
+          <i data-lucide="moon" class="theme-switch-icon theme-switch-icon--moon"></i>
+          <span class="theme-switch-thumb"></span>
+        </span>
       </button>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
         <i data-lucide="menu" aria-hidden="true"></i>
@@ -61,7 +70,7 @@
   </div>
 </header>
 
-<main class="pj">
+<main class="pj" id="main">
 
   <!-- ===================== 1. ENCABEZADO ===================== -->
   <section class="pj-hero">
@@ -112,24 +121,30 @@
   </section>
 
   <!-- ===================== 3. CASO DE NEGOCIO ===================== -->
-  <section class="pj-section" id="caso">
-    <div class="container pj-narrow">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> CASO DE NEGOCIO</p>
-      <h2 class="pj-h2">El problema</h2>
-      <p class="pj-text">Una empresa de logística evalúa expandir su operación al sudeste de Brasil. Su equipo de seguridad encontró que las carreteras federales concentran la mayor cantidad de accidentes, y la Dirección pidió una vista única de 2018 a 2020 antes de definir las rutas.</p>
-      <ul class="pj-questions">
-        <li>¿A qué horas y qué días ocurren más accidentes?</li>
-        <li>¿En qué estados y puntos del mapa se concentran?</li>
-        <li>¿Cuáles son las cinco causas principales?</li>
-        <li>¿Cuántos fallecidos y heridos dejan?</li>
-      </ul>
+  <section class="pj-section pj-case-section" id="caso">
+    <div class="container">
+      <div class="pj-case">
+        <div class="pj-case-top">
+          <div>
+            <p class="eyebrow eyebrow-sm">CASO DE NEGOCIO</p>
+            <h2 class="pj-h2">El problema</h2>
+          </div>
+          <p class="pj-text">Una empresa de logística evalúa expandir su operación al sudeste de Brasil. Su equipo de seguridad encontró que las carreteras federales concentran la mayor cantidad de accidentes, y la Dirección pidió una vista única de 2018 a 2020 antes de definir las rutas.</p>
+        </div>
+        <ol class="pj-questions">
+          <li><span class="pj-q-num">01</span>¿A qué horas y qué días ocurren más accidentes?</li>
+          <li><span class="pj-q-num">02</span>¿En qué estados y puntos del mapa se concentran?</li>
+          <li><span class="pj-q-num">03</span>¿Cuáles son las cinco causas principales?</li>
+          <li><span class="pj-q-num">04</span>¿Cuántos fallecidos y heridos dejan?</li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <!-- ===================== 4. ARQUITECTURA ===================== -->
   <section class="pj-section pj-section--alt" id="arquitectura">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> ARQUITECTURA</p>
+      <p class="eyebrow eyebrow-sm">ARQUITECTURA</p>
       <h2 class="pj-h2">De Excel al reporte</h2>
       <p class="pj-text pj-narrow">Arquitectura Medallion con notebooks de Python. Cada capa valida sus datos antes de escribir.</p>
 
@@ -171,15 +186,14 @@
   <!-- ===================== 5. MODELO DE DATOS ===================== -->
   <section class="pj-section" id="modelo">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> MODELO DE DATOS</p>
+      <p class="eyebrow eyebrow-sm">MODELO DE DATOS</p>
       <h2 class="pj-h2">Modelo estrella</h2>
       <p class="pj-text pj-narrow">Un hecho, <code>fact_accidentes</code>, con un accidente por fila, y cinco dimensiones: calendario, hora, ubicación, causa y características.</p>
 
       <figure class="pj-figure">
-        <a href="../assets/img/accidentes-carreteras/modelo-datos.jpg" target="_blank" rel="noopener" class="pj-figure-link">
-          <img src="../assets/img/accidentes-carreteras/modelo-datos.jpg" alt="Modelo estrella en Power BI: fact_accidentes al centro, relacionada con dim_calendario, dim_hora, dim_ubicacion, dim_causa y dim_caracteristicas" width="1213" height="763" loading="lazy" decoding="async">
+        <a href="../assets/img/accidentes-carreteras/modelo-estrella.png" target="_blank" rel="noopener" class="pj-figure-link">
+          <img src="../assets/img/accidentes-carreteras/modelo-estrella.png" alt="Modelo estrella en Power BI: fact_accidentes al centro, relacionada con dim_calendario, dim_hora, dim_ubicacion, dim_causa y dim_caracteristicas" width="1600" height="1120" loading="lazy" decoding="async">
         </a>
-        <figcaption class="pj-caption">Relaciones de uno a muchos, de cada dimensión al hecho. Las llaves quedan ocultas en el reporte.</figcaption>
       </figure>
     </div>
   </section>
@@ -187,7 +201,7 @@
   <!-- ===================== 6. DECISIONES TÉCNICAS ===================== -->
   <section class="pj-section pj-section--alt pj-decisions" id="decisiones">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> DECISIONES TÉCNICAS</p>
+      <p class="eyebrow eyebrow-sm">DECISIONES TÉCNICAS</p>
       <h2 class="pj-h2">Qué decidí y por qué</h2>
 
       <div class="pj-decision-grid">
@@ -221,7 +235,7 @@
   <!-- ===================== 7. HALLAZGOS ===================== -->
   <section class="pj-section" id="hallazgos">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> HALLAZGOS</p>
+      <p class="eyebrow eyebrow-sm">HALLAZGOS</p>
       <h2 class="pj-h2">Lo que muestran los datos</h2>
 
       <div class="pj-findings">
@@ -280,49 +294,47 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-top">
-    <div class="footer-col footer-about">
-      <h4 class="footer-name">Ambar <span class="accent-purple">Quintana</span></h4>
-      <p class="footer-role">Business Intelligence Developer</p>
-      <p class="footer-tagline">Construyo soluciones de datos que impulsan la toma de decisiones</p>
-      <div class="footer-social-icons">
-        <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i data-lucide="linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" aria-label="GitHub">
-          <i data-lucide="github" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:ambarsquintana@gmail.com" aria-label="Correo">
-          <i data-lucide="mail" aria-hidden="true"></i>
-        </a>
+<footer class="site-footer" id="contacto">
+  <div class="container footer-main">
+    <div class="footer-intro">
+      <p class="footer-eyebrow">Contacto</p>
+      <h2 class="footer-title">¿Tienes un reto de datos?<br><span>Conversemos.</span></h2>
+      <p class="footer-text">Si buscas convertir información dispersa en decisiones claras, me encantaría conocer tu proyecto.</p>
+    </div>
+    <div class="contact-list">
+      <div class="contact-row">
+        <span class="contact-label">Correo</span>
+        <a href="mailto:ambarsquintana@gmail.com" class="contact-value">ambarsquintana@gmail.com</a>
+        <span class="contact-end">
+          <button type="button" class="copy-email-btn" data-email="ambarsquintana@gmail.com" aria-label="Copiar correo" title="Copiar correo">
+            <i data-lucide="copy" class="icon-copy" aria-hidden="true"></i>
+            <i data-lucide="check" class="icon-check" aria-hidden="true"></i>
+          </button>
+          <i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i>
+        </span>
       </div>
-    </div>
-    <div class="footer-col footer-pages">
-      <h4>ENLACES</h4>
-      <a href="#top">Dashboard</a>
-      <a href="#caso">Caso de negocio</a>
-      <a href="#arquitectura">Arquitectura</a>
-      <a href="#modelo">Modelo de datos</a>
-      <a href="#decisiones">Decisiones técnicas</a>
-      <a href="#hallazgos">Hallazgos</a>
-    </div>
-    <div class="footer-col footer-social">
-      <h4>CONTACTO</h4>
-      <p class="footer-contact-item"><i data-lucide="map-pin" aria-hidden="true"></i> Bogotá, Colombia</p>
-      <a href="mailto:ambarsquintana@gmail.com" class="footer-contact-item">
-        <i data-lucide="mail" aria-hidden="true"></i> ambarsquintana@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="footer-contact-item">
-        <i data-lucide="link" aria-hidden="true"></i> LinkedIn
-      </a>
-      <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="footer-contact-item">
-        <i data-lucide="github" aria-hidden="true"></i> GitHub
-      </a>
+      <div class="contact-row">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="contact-value">/in/ambarsquintana</a>
+        <span class="contact-end"><i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">GitHub</span>
+        <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="contact-value">/ambarsquintana</a>
+        <span class="contact-end"><i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i></span>
+      </div>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p class="footer-copyright">© 2026 Ambar Quintana · Todos los derechos reservados</p>
+    <p class="footer-brand">Ambar Quintana · Business Intelligence Developer</p>
+    <nav class="footer-pages" aria-label="Enlaces del pie de página">
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a href="../index.html#portafolio">Proyectos</a>
+      <a href="../index.html#experiencia">Experiencia</a>
+      <a href="../index.html#habilidades">Habilidades</a>
+      <a href="../index.html#certificaciones">Certificaciones</a>
+    </nav>
+    <p class="footer-copyright">© 2026 Ambar Quintana</p>
     <button id="scroll-top" class="scroll-top-btn" type="button" aria-label="Volver arriba">
       <i data-lucide="arrow-up" aria-hidden="true"></i>
     </button>

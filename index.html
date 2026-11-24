@@ -33,23 +33,31 @@
 </head>
 <body id="top">
 
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
 <header class="site-header">
   <div class="container header-inner">
-    <a href="#top" class="logo">Ambar <span class="accent-purple">Quintana</span></a>
+    <a href="#top" class="logo">
+      <img src="assets/img/icono.png" alt="" class="logo-icon" width="26" height="26" decoding="async">
+      <span>Ambar <span class="accent-purple">Quintana</span></span>
+    </a>
 
     <nav class="main-nav" aria-label="Navegación principal">
-      <a href="#perfil">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
       <a href="#portafolio">Proyectos</a>
-      <a href="#habilidades">Habilidades</a>
       <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
       <a href="#certificaciones">Certificaciones</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
     <div class="header-actions">
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
-        <i data-lucide="moon" class="icon-moon" aria-hidden="true"></i>
-        <i data-lucide="sun" class="icon-sun" aria-hidden="true"></i>
+      <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Tema oscuro">
+        <span class="theme-switch-track" aria-hidden="true">
+          <i data-lucide="sun" class="theme-switch-icon theme-switch-icon--sun"></i>
+          <i data-lucide="moon" class="theme-switch-icon theme-switch-icon--moon"></i>
+          <span class="theme-switch-thumb"></span>
+        </span>
       </button>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
         <i data-lucide="menu" aria-hidden="true"></i>
@@ -58,103 +66,265 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- ===================== PERFIL ===================== -->
-  <section id="perfil" class="section perfil-section">
-    <div class="container perfil-grid">
-      <div class="perfil-photo-wrap">
-        <div class="perfil-dots" aria-hidden="true"></div>
-        <div class="perfil-photo-frame">
-          <img src="assets/img/perfil.png" alt="Foto de perfil de Ambar Quintana" class="perfil-photo" decoding="async" fetchpriority="high">
+  <section id="perfil" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="status-badge"><i data-lucide="map-pin" aria-hidden="true"></i>Bogotá, Colombia</p>
+          <h1 class="hero-name">Ambar Quintana</h1>
+          <p class="hero-role">Business Intelligence Developer</p>
+
+          <p class="hero-description">
+            Construyo soluciones de BI de punta a punta: procesos ETL, modelos de datos y dashboards en Power BI, con foco en rendimiento y calidad del dato.
+          </p>
+
+          <dl class="metrics">
+            <div class="metric">
+              <dt>+80M</dt>
+              <dd>Registros procesados en soluciones ETL</dd>
+            </div>
+            <div class="metric">
+              <dt>+70%</dt>
+              <dd>Mejora en rendimiento de ETL y dashboards</dd>
+            </div>
+            <div class="metric">
+              <dt>+9 años</dt>
+              <dd>Experiencia trabajando con datos</dd>
+            </div>
+          </dl>
+
+          <div class="cta-row">
+            <a href="mailto:ambarsquintana@gmail.com" class="btn btn-primary">
+              <i data-lucide="mail" aria-hidden="true"></i> Contáctame
+            </a>
+            <a href="#portafolio" class="btn btn-secondary">
+              <i data-lucide="layout-dashboard" aria-hidden="true"></i> Ver proyectos
+            </a>
+            <div class="icon-links">
+              <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
+                <i data-lucide="linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+                <i data-lucide="github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <figure class="hero-photo">
+          <img src="assets/img/perfil.png" alt="Foto de perfil de Ambar Quintana" width="896" height="1029" decoding="async" fetchpriority="high">
+          <figcaption class="photo-badge"><span class="status-dot" aria-hidden="true"></span>Abierta a nuevos proyectos</figcaption>
+        </figure>
       </div>
+    </div>
+  </section>
 
-      <div class="perfil-content">
-        <p class="eyebrow location"><i data-lucide="map-pin" aria-hidden="true"></i>Bogotá, Colombia</p>
-        <h1 class="perfil-name">Ambar <span class="accent-purple">Quintana</span></h1>
-        <p class="perfil-title">Business Intelligence Developer</p>
-        <p class="perfil-description">
-          Construyo soluciones de Business Intelligence de punta a punta, desde procesos ETL y modelos de datos robustos hasta dashboards en Power BI, con foco en rendimiento, calidad y gobierno del dato.
-        </p>
+  <!-- ===================== SOBRE MÍ ===================== -->
+  <section id="sobre-mi" class="section">
+    <div class="container">
+      <p class="eyebrow eyebrow-sm">Sobre mí</p>
+      <h2 class="section-title">Más que dashboards</h2>
 
-        <dl class="metrics">
-          <div class="metric">
-            <dt>+80M</dt>
-            <dd>Registros procesados en soluciones ETL</dd>
-          </div>
-          <div class="metric">
-            <dt>+70%</dt>
-            <dd>Mejora en rendimiento de ETL y dashboards</dd>
-          </div>
-          <div class="metric">
-            <dt>+9 años</dt>
-            <dd>Experiencia trabajando con datos</dd>
-          </div>
-        </dl>
-
-        <div class="cta-row">
-          <a href="mailto:ambarsquintana@gmail.com" class="btn btn-primary">
-            <i data-lucide="mail" aria-hidden="true"></i> Contáctame
-          </a>
-          <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="btn btn-secondary">
-            <i data-lucide="linkedin" aria-hidden="true"></i> LinkedIn
-          </a>
-          <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="btn btn-secondary">
-            <i data-lucide="github" aria-hidden="true"></i> GitHub
-          </a>
+      <div class="about-grid">
+        <p class="about-quote">Una buena solución empieza por entender cómo opera el negocio, no por la herramienta.</p>
+        <div class="about-text">
+          <p>Soy Ingeniera BI con experiencia en analítica e ingeniería de datos para entornos corporativos. Veo los datos como uno de los activos más valiosos de las organizaciones y me especializo en crear soluciones que acerquen la información a quienes toman decisiones con ella.</p>
+          <p>Disfruto construir procesos end-to-end que sean claros, eficientes y fáciles de mantener. En mi trabajo integro información de diferentes fuentes combinando SQL avanzado (SQL Server/PostgreSQL), Power BI (Desktop y Service), SSIS y modelado dimensional para impulsar la eficiencia operativa y aportar claridad estratégica en distintas áreas de negocio. A lo largo de mi trayectoria he colaborado tanto con perfiles técnicos como con equipos de negocio en sectores como Capital Humano, Retail y Educación.</p>
+          <p>Fuera del entorno laboral, me encanta aprender sobre el arte de los bonsáis y conocer diferentes lugares de Colombia, así que mis vacaciones han sido la excusa perfecta para descubrir nuevos rincones del país. Sin duda, Colombia es un país hermoso.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===================== PORTAFOLIO ===================== -->
-  <section id="portafolio" class="section portafolio-section">
+  <section id="portafolio" class="section">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> PROYECTOS</p>
-      <h2 class="section-title">Proyectos</h2>
+      <p class="eyebrow eyebrow-sm">Proyectos</p>
+      <h2 class="section-title">Del dato crudo al dashboard</h2>
       <p class="section-intro">Proyectos personales enfocados en Business Intelligence, modelado de datos, procesos de ETL y automatización.</p>
 
       <div class="project-grid" id="project-grid">
 
         <article class="project-card project-card--video">
           <div class="project-image">
-            <img src="assets/img/accidentes-carreteras/card.jpg" alt="Dashboard en Power BI de accidentes en carreteras federales de Brasil" loading="lazy" decoding="async">
-            <video class="project-video" src="assets/img/accidentes-carreteras/card.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <video class="project-video" src="assets/img/accidentes-carreteras/card.mp4" poster="assets/img/accidentes-carreteras/card-poster.jpg" muted loop playsinline preload="metadata" aria-label="Dashboard en Power BI de accidentes en carreteras federales de Brasil" tabindex="-1"></video>
           </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Power BI</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">ETL</span>
-            </div>
+          <p class="project-meta">
+            <span>01 · Power BI · Python · ETL</span>
+          </p>
+          <div class="project-title-row">
             <h3>Accidentes en Carreteras</h3>
-            <p>Solución end-to-end: ETL Medallion en Python, modelo estrella y dashboard en Power BI.</p>
-            <div class="project-actions">
-              <a href="proyectos/accidentes-carreteras.html" class="btn btn-dark project-link">
-                <i data-lucide="monitor-play" aria-hidden="true"></i> Ver proyecto
-              </a>
-            </div>
+            <a href="proyectos/accidentes-carreteras.html" class="project-link" aria-label="Ver proyecto Accidentes en Carreteras">
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
           </div>
+          <p class="project-desc">Dónde, cuándo y por qué ocurren los accidentes en las carreteras de Brasil, para planear rutas logísticas.</p>
         </article>
 
+        <article class="project-card project-card--soon">
+          <div class="project-image">
+            <img src="assets/img/proyectos/en-construccion.jpg" alt="Proyecto en construcción" loading="lazy" decoding="async">
+            <span class="soon-badge"><i data-lucide="hammer" aria-hidden="true"></i>En construcción</span>
+          </div>
+          <p class="project-meta">
+            <span>02 · Power BI · SQL · ETL</span>
+            <span class="project-soon">Próximamente</span>
+          </p>
+          <div class="project-title-row">
+            <h3>Supply Chain</h3>
+          </div>
+          <p class="project-desc">Inventario, compras y distribución de CEDIs a tiendas, con rotación y niveles de stock.</p>
+        </article>
+
+        <article class="project-card project-card--soon">
+          <div class="project-image">
+            <img src="assets/img/proyectos/en-construccion.jpg" alt="Proyecto en construcción" loading="lazy" decoding="async">
+            <span class="soon-badge"><i data-lucide="hammer" aria-hidden="true"></i>En construcción</span>
+          </div>
+          <p class="project-meta">
+            <span>03 · Power BI · DAX · SQL</span>
+            <span class="project-soon">Próximamente</span>
+          </p>
+          <div class="project-title-row">
+            <h3>People Analytics</h3>
+          </div>
+          <p class="project-desc">Rotación, nómina y desempeño del talento para apoyar las decisiones de RR. HH.</p>
+        </article>
+
+        <article class="project-card project-card--soon">
+          <div class="project-image">
+            <img src="assets/img/proyectos/en-construccion.jpg" alt="Proyecto en construcción" loading="lazy" decoding="async">
+            <span class="soon-badge"><i data-lucide="hammer" aria-hidden="true"></i>En construcción</span>
+          </div>
+          <p class="project-meta">
+            <span>04 · Power BI · Python · ETL</span>
+            <span class="project-soon">Próximamente</span>
+          </p>
+          <div class="project-title-row">
+            <h3>Analítica de Campañas</h3>
+          </div>
+          <p class="project-desc">Envíos, lecturas y respuestas de campañas de mensajería en un contact center.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ===================== HABILIDADES ===================== -->
-  <section id="habilidades" class="section habilidades-section">
+  <!-- ===================== EXPERIENCIA ===================== -->
+  <section id="experiencia" class="section">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> HABILIDADES</p>
-      <h2 class="section-title">Habilidades</h2>
-      <p class="section-intro">Herramientas y tecnologías que utilizo para crear soluciones de BI eficientes y escalables.</p>
+      <p class="eyebrow eyebrow-sm">Experiencia</p>
+      <h2 class="section-title">Mi trayectoria profesional</h2>
+      <p class="section-intro">Un recorrido por mi experiencia trabajando con datos y los principales logros de mi trayectoria profesional.</p>
+
+      <ol class="xp-list">
+
+        <li class="xp-item">
+          <div class="xp-meta">
+            <p class="xp-period">Ago. 2024 — Abr. 2026</p>
+            <p class="xp-dur">1 año 9 meses</p>
+            <p class="xp-place">Bogotá · Remoto</p>
+          </div>
+          <div class="xp-body">
+            <h3>Business Intelligence Developer</h3>
+            <p class="xp-company">Somos Gente Digital</p>
+            <span class="xp-industry"><i data-lucide="building-2" aria-hidden="true"></i>Educación</span>
+            <ul class="xp-achievements">
+              <li>Construí soluciones BI end-to-end combinando ETL multicapa en SSIS, modelado dimensional y reportes en Power BI.</li>
+              <li>Reduje en <strong>más de 70%</strong> los tiempos de ejecución de ETL en SSIS (<strong>+80M de registros</strong>) y en <strong>80%</strong> la respuesta de reportes en Power BI.</li>
+              <li>Migré las capas staging y DW de SQL Server on-premise a AWS Aurora PostgreSQL tras un cambio de arquitectura de datos.</li>
+              <li>Administré Power BI Service con RLS y gobierno de datos, integré reportes con Microsoft Entra y creé flujos en Power Automate.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp-item">
+          <div class="xp-meta">
+            <p class="xp-period">Jun. 2023 — Mar. 2024</p>
+            <p class="xp-dur">10 meses</p>
+            <p class="xp-place">Bogotá · Remoto</p>
+          </div>
+          <div class="xp-body">
+            <h3>Experienced Data Engineer</h3>
+            <p class="xp-company">NEORIS</p>
+            <span class="xp-industry"><i data-lucide="building-2" aria-hidden="true"></i>Banca</span>
+            <ul class="xp-achievements">
+              <li>Migré <strong>3 bases de datos (1.2 TB)</strong> de SQL Server 2012 a 2019 con SSIS, validando la integridad de los datos por conciliación de registros.</li>
+              <li>Modernicé el código de procedimientos, funciones y vistas para asegurar su compatibilidad con SQL Server 2019.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp-item">
+          <div class="xp-meta">
+            <p class="xp-period">Mar. 2021 — Jun. 2023</p>
+            <p class="xp-dur">2 años 4 meses</p>
+            <p class="xp-place">Ciudad de México · Remoto</p>
+          </div>
+          <div class="xp-body">
+            <h3>SQL Server Developer Semi Senior</h3>
+            <p class="xp-company">GM Robotic</p>
+            <span class="xp-industry"><i data-lucide="building-2" aria-hidden="true"></i>Recursos Humanos</span>
+            <ul class="xp-achievements">
+              <li>Diseñé modelos de datos y procesos ETL en SSIS 2019 para integrar y migrar datos desde diferentes fuentes (<strong>+3M de registros</strong>).</li>
+              <li>Creé procedimientos en SQL Server, informes en SSRS y optimicé consultas críticas con planes de ejecución y SQL Server Profiler.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp-item">
+          <div class="xp-meta">
+            <p class="xp-period">May. 2019 — Dic. 2020</p>
+            <p class="xp-dur">1 año 8 meses</p>
+            <p class="xp-place">Ciudad de México · Remoto</p>
+          </div>
+          <div class="xp-body">
+            <h3>SQL Server Developer</h3>
+            <p class="xp-company">Raxione</p>
+            <span class="xp-industry"><i data-lucide="building-2" aria-hidden="true"></i>Retail</span>
+            <ul class="xp-achievements">
+              <li>Diseñé el modelo de datos y los procedimientos en SQL Server para un sistema de ventas y comisiones.</li>
+              <li>Desarrollé reportes analíticos para el seguimiento del desempeño de los vendedores.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp-item">
+          <div class="xp-meta">
+            <p class="xp-period">Abr. 2017 — Abr. 2019</p>
+            <p class="xp-dur">2 años 1 mes</p>
+            <p class="xp-place">Ciudad de México · Remoto</p>
+          </div>
+          <div class="xp-body">
+            <h3>Database Developer</h3>
+            <p class="xp-company">GM Robotic</p>
+            <span class="xp-industry"><i data-lucide="building-2" aria-hidden="true"></i>Recursos Humanos</span>
+            <ul class="xp-achievements">
+              <li>Diseñé el modelo relacional de un sistema de gestión de personal y desarrollé procedimientos, vistas, funciones y jobs en SQL Server.</li>
+              <li>Optimicé consultas con planes de ejecución y SQL Server Profiler, y gestioné roles y permisos.</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== HABILIDADES ===================== -->
+  <section id="habilidades" class="section">
+    <div class="container">
+      <p class="eyebrow eyebrow-sm">Habilidades</p>
+      <h2 class="section-title">Stack técnico</h2>
+      <p class="section-intro">Herramientas y tecnologías con las que construyo soluciones de datos, desde el origen hasta el dashboard.</p>
 
       <div class="skills-grid">
         <div class="skill-card">
           <img src="assets/img/icons/power-bi.png" alt="Power BI" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Power BI</h3>
-            <p>Dashboards · DAX · RLS · Report Builder · Power Query</p>
+            <p class="skill-tools">Dashboards&nbsp;· DAX&nbsp;· RLS&nbsp;· Report Builder&nbsp;· Power Query</p>
           </div>
         </div>
 
@@ -162,7 +332,7 @@
           <img src="assets/img/icons/sql.png" alt="SQL" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>SQL</h3>
-            <p>Joins · CTEs · Agregaciones · Window Functions</p>
+            <p class="skill-tools">Joins&nbsp;· CTEs&nbsp;· Agregaciones&nbsp;· Window Functions</p>
           </div>
         </div>
 
@@ -170,7 +340,7 @@
           <img src="assets/img/icons/data-integration.png" alt="Integración de datos" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Integración de datos</h3>
-            <p>SQL Server · PostgreSQL · SharePoint · APIs</p>
+            <p class="skill-tools">SQL Server&nbsp;· PostgreSQL&nbsp;· SharePoint&nbsp;· APIs</p>
           </div>
         </div>
 
@@ -178,7 +348,7 @@
           <img src="assets/img/icons/data-model.png" alt="Modelado de datos" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Modelado de datos</h3>
-            <p>Dimensional · Semántico · Star &amp; Snowflake Schema</p>
+            <p class="skill-tools">Dimensional&nbsp;· Semántico&nbsp;· Star &amp; Snowflake Schema</p>
           </div>
         </div>
 
@@ -186,7 +356,7 @@
           <img src="assets/img/icons/etl.png" alt="ETL" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>ETL</h3>
-            <p>Limpieza · Transformación · Integración · Multicapa · Medallion · SSIS</p>
+            <p class="skill-tools">SSIS&nbsp;· Limpieza&nbsp;· Transformación&nbsp;· Integración&nbsp;· Multicapa&nbsp;· Medallion</p>
           </div>
         </div>
 
@@ -194,7 +364,7 @@
           <img src="assets/img/icons/power-bi-service.png" alt="Power BI Service" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Power BI Service</h3>
-            <p>Workspaces · Aplicaciones · Roles · Gobierno de datos</p>
+            <p class="skill-tools">Workspaces&nbsp;· Aplicaciones&nbsp;· Roles&nbsp;· Gobierno de datos</p>
           </div>
         </div>
 
@@ -202,7 +372,7 @@
           <img src="assets/img/icons/python.png" alt="Python" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Python</h3>
-            <p>Pandas · NumPy · Jupyter · Automatización</p>
+            <p class="skill-tools">Pandas&nbsp;· NumPy&nbsp;· Jupyter&nbsp;· Automatización</p>
           </div>
         </div>
 
@@ -210,7 +380,7 @@
           <img src="assets/img/icons/power-automate.png" alt="Power Automate" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Power Automate</h3>
-            <p>Flujos · Automatización · Integración · Procesos</p>
+            <p class="skill-tools">Flujos&nbsp;· Automatización&nbsp;· Integración&nbsp;· Procesos</p>
           </div>
         </div>
 
@@ -218,7 +388,7 @@
           <img src="assets/img/icons/excel.png" alt="Excel" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Excel</h3>
-            <p>Power Query · Power Pivot · Tablas dinámicas</p>
+            <p class="skill-tools">Power Query&nbsp;· Power Pivot&nbsp;· Tablas dinámicas</p>
           </div>
         </div>
 
@@ -226,241 +396,115 @@
           <img src="assets/img/icons/figma.png" alt="Figma" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Figma</h3>
-            <p>Diseño de dashboards · Prototipado · UI/UX</p>
+            <p class="skill-tools">Diseño de dashboards&nbsp;· Prototipado&nbsp;· UI/UX</p>
           </div>
         </div>
-
-        <!--div class="skill-card">
-          <img src="assets/img/icons/sparkles.png" alt="IA Generativa" class="skill-icon" loading="lazy" decoding="async">
-          <div class="skill-info">
-            <h3>IA Generativa</h3>
-            <p>ChatGPT · Claude · Gemini</p>
-          </div>
-        </div-->
 
         <div class="skill-card">
           <img src="assets/img/icons/git.png" alt="Confluence · Jira · Git" class="skill-icon" loading="lazy" decoding="async">
           <div class="skill-info">
             <h3>Confluence · Jira · Git</h3>
-            <p>Scrum · Documentación · Control de versiones</p>
+            <p class="skill-tools">Scrum&nbsp;· Documentación&nbsp;· Control de versiones</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== EXPERIENCIA ===================== -->
-  <section id="experiencia" class="section experiencia-section">
-    <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> EXPERIENCIA</p>
-      <h2 class="section-title">Experiencia</h2>
-      <p class="section-intro">Un recorrido por mi experiencia trabajando con datos y los principales logros de mi trayectoria profesional.</p>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-marker"><span class="timeline-dot"></span></div>
-          <p class="timeline-period">2024 — 2026</p>
-          <div class="timeline-content">
-            <h3>Business Intelligence Developer</h3>
-            <p class="role">SOMOS GENTE DIGITAL</p>
-            <p class="location"><span class="industry"><i data-lucide="building-2" aria-hidden="true"></i>Educación</span> · Bogotá · Remoto</p>
-            <ul class="achievements">
-              <li>Construí soluciones BI end-to-end combinando ETL multicapa en SSIS, modelado dimensional y reportes en Power BI.</li>
-              <li>Reduje en más de 70% los tiempos de ejecución de ETL en SSIS (+80M de registros) y en 80% la respuesta de reportes en Power BI.</li>
-              <li>Migré las capas staging y DW de SQL Server on-premise a AWS Aurora PostgreSQL tras un cambio de arquitectura de datos.</li>
-              <li>Administré Power BI Service con RLS y gobierno de datos, integré reportes con Microsoft Entra y creé flujos en Power Automate.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"><span class="timeline-dot"></span></div>
-          <p class="timeline-period">2023 — 2024</p>
-          <div class="timeline-content">
-            <h3>Experienced Data Engineer</h3>
-            <p class="role">NEORIS</p>
-            <p class="location"><span class="industry"><i data-lucide="building-2" aria-hidden="true"></i>Banca</span> · Bogotá · Remoto</p>
-            <ul class="achievements">
-              <li>Migré 3 bases de datos (1.2 TB) de SQL Server 2012 a 2019 con SSIS, validando la integridad de los datos por conciliación de registros.</li>
-              <li>Modernicé el código de procedimientos, funciones y vistas para asegurar su compatibilidad con SQL Server 2019.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"><span class="timeline-dot"></span></div>
-          <p class="timeline-period">2021 — 2023</p>
-          <div class="timeline-content">
-            <h3>SQL Server Developer Semi Senior</h3>
-            <p class="role">GM ROBOTIC</p>
-            <p class="location"><span class="industry"><i data-lucide="building-2" aria-hidden="true"></i>Recursos Humanos</span> · Ciudad de México · Remoto</p>
-            <ul class="achievements">
-              <li>Diseñé modelos de datos y procesos ETL en SSIS 2019 para integrar y migrar datos desde diferentes fuentes (+3M de registros).</li>
-              <li>Creé procedimientos en SQL Server, informes en SSRS y optimicé consultas críticas con planes de ejecución y SQL Server Profiler.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"><span class="timeline-dot"></span></div>
-          <p class="timeline-period">2019 — 2020</p>
-          <div class="timeline-content">
-            <h3>SQL Server Developer</h3>
-            <p class="role">RAXIONE</p>
-            <p class="location"><span class="industry"><i data-lucide="building-2" aria-hidden="true"></i>Retail</span> · Ciudad de México · Remoto</p>
-            <ul class="achievements">
-              <li>Diseñé el modelo de datos y los procedimientos en SQL Server para un sistema de ventas y comisiones, con reportes analíticos para el seguimiento del desempeño de los vendedores.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"><span class="timeline-dot"></span></div>
-          <p class="timeline-period">2017 — 2019</p>
-          <div class="timeline-content">
-            <h3>Database Developer</h3>
-            <p class="role">GM ROBOTIC</p>
-            <p class="location"><span class="industry"><i data-lucide="building-2" aria-hidden="true"></i>Recursos Humanos</span> · Ciudad de México · Remoto</p>
-            <ul class="achievements">
-              <li>Diseñé el modelo relacional de un sistema de gestión de personal, desarrollé procedimientos, vistas, funciones y jobs en SQL Server, optimicé consultas con planes de ejecución y SQL Server Profiler, y gestioné roles y permisos.</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ===================== CERTIFICACIONES ===================== -->
-  <section id="certificaciones" class="section certificaciones-section">
+  <section id="certificaciones" class="section">
     <div class="container">
-      <p class="eyebrow eyebrow-sm"><span class="eyebrow-dash">&mdash;&mdash;</span> CERTIFICACIONES</p>
-      <h2 class="section-title">Certificaciones</h2>
-      <p class="section-intro">Certificaciones que respaldan mis conocimientos en análisis de datos, ingeniería de datos, SQL y metodologías ágiles.</p>
+      <p class="eyebrow eyebrow-sm">Certificaciones</p>
+      <h2 class="section-title">Aprendizaje respaldado</h2>
+      <p class="section-intro">Certificaciones que respaldan mi formación continua en análisis e ingeniería de datos, SQL y metodologías ágiles.</p>
 
       <div class="cert-grid">
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/b9ac77bfdcf595fcafa2c0b1a03fa5204da0fb6e" target="_blank" rel="noopener" class="cert-card" aria-label="Ver credencial de Associate Data Analyst (DataCamp), 2026">
-          <span class="cert-logo-wrap"><img src="assets/img/icons/logo-datacamp.png" alt="Logo de DataCamp" class="cert-logo" loading="lazy" decoding="async"></span>
+          <span class="cert-logo-wrap"><img src="assets/img/icons/logo-datacamp.png" alt="" class="cert-logo" loading="lazy" decoding="async"></span>
           <span class="cert-info">
-            <h3 class="cert-name">Associate Data Analyst</h3>
+            <span class="cert-year">2026</span>
+            <span class="cert-name">Associate Data Analyst</span>
             <span class="cert-issuer">DataCamp</span>
           </span>
-          <span class="cert-meta">
-            <span class="cert-verify"><span class="cert-verify-text">Ver credencial</span> <i data-lucide="external-link" aria-hidden="true"></i></span>
-            <span class="cert-year">2026</span>
-          </span>
+          <span class="cert-verify">Ver credencial <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
         </a>
 
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/280cf0c3c1e9a5e5403f9c57dd12c5bf54522929" target="_blank" rel="noopener" class="cert-card" aria-label="Ver credencial de Associate Data Engineer (DataCamp), 2024">
-          <span class="cert-logo-wrap"><img src="assets/img/icons/logo-datacamp.png" alt="Logo de DataCamp" class="cert-logo" loading="lazy" decoding="async"></span>
+          <span class="cert-logo-wrap"><img src="assets/img/icons/logo-datacamp.png" alt="" class="cert-logo" loading="lazy" decoding="async"></span>
           <span class="cert-info">
-            <h3 class="cert-name">Associate Data Engineer</h3>
+            <span class="cert-year">2024</span>
+            <span class="cert-name">Associate Data Engineer</span>
             <span class="cert-issuer">DataCamp</span>
           </span>
-          <span class="cert-meta">
-            <span class="cert-verify"><span class="cert-verify-text">Ver credencial</span> <i data-lucide="external-link" aria-hidden="true"></i></span>
-            <span class="cert-year">2024</span>
-          </span>
+          <span class="cert-verify">Ver credencial <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
         </a>
 
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/841927838bc1889e2efff37f0a7d8692ab727168" target="_blank" rel="noopener" class="cert-card" aria-label="Ver credencial de SQL Server Developer (DataCamp), 2024">
-          <span class="cert-logo-wrap"><img src="assets/img/icons/logo-datacamp.png" alt="Logo de DataCamp" class="cert-logo" loading="lazy" decoding="async"></span>
+          <span class="cert-logo-wrap"><img src="assets/img/icons/logo-datacamp.png" alt="" class="cert-logo" loading="lazy" decoding="async"></span>
           <span class="cert-info">
-            <h3 class="cert-name">SQL Server Developer</h3>
+            <span class="cert-year">2024</span>
+            <span class="cert-name">SQL Server Developer</span>
             <span class="cert-issuer">DataCamp</span>
           </span>
-          <span class="cert-meta">
-            <span class="cert-verify"><span class="cert-verify-text">Ver credencial</span> <i data-lucide="external-link" aria-hidden="true"></i></span>
-            <span class="cert-year">2024</span>
-          </span>
+          <span class="cert-verify">Ver credencial <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
         </a>
 
         <a href="https://www.scrumstudy.com/certification/verify?type=SFC&amp;number=985475" target="_blank" rel="noopener" class="cert-card" aria-label="Ver credencial de Scrum Fundamentals Certified (SCRUMstudy), 2023">
-          <span class="cert-logo-wrap cert-logo-wrap--wide"><img src="assets/img/icons/logo-scrumstudy.png" alt="Logo de SCRUMstudy" class="cert-logo" loading="lazy" decoding="async"></span>
+          <span class="cert-logo-wrap cert-logo-wrap--wide"><img src="assets/img/icons/logo-scrumstudy.png" alt="" class="cert-logo" loading="lazy" decoding="async"></span>
           <span class="cert-info">
-            <h3 class="cert-name">Scrum Fundamentals Certified</h3>
+            <span class="cert-year">2023</span>
+            <span class="cert-name">Scrum Fundamentals Certified</span>
             <span class="cert-issuer">SCRUMstudy</span>
           </span>
-          <span class="cert-meta">
-            <span class="cert-verify"><span class="cert-verify-text">Ver credencial</span> <i data-lucide="external-link" aria-hidden="true"></i></span>
-            <span class="cert-year">2023</span>
-          </span>
+          <span class="cert-verify">Ver credencial <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CONTACTO ===================== -->
-  <section id="contacto" class="section contacto-section">
-    <div class="container contacto-grid">
-      <div class="contacto-photo-wrap">
-        <div class="contacto-photo-frame"><img src="assets/img/perfil.png" alt="Ambar Quintana, Business Intelligence Developer" class="contacto-photo" loading="lazy" decoding="async"></div>
-        <div class="contacto-social">
-          <a href="https://www.linkedin.com/in/ambarsquintana" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
-            <i data-lucide="linkedin" aria-hidden="true"></i>
-          </a>
-          <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
-            <i data-lucide="github" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="contacto-content">
-        <h2 class="visually-hidden">Sobre mí</h2>
-        <p class="eyebrow"><span class="eyebrow-dash">&mdash;&mdash;</span> Sobre mí</p>
-        <p>Soy desarrolladora de Business Intelligence con enfoque en ingeniería de datos. Disfruto construir dashboards desde la base: los pipelines que traen los datos, el modelo, la calidad del dato, el rendimiento y la visualización final que hace que las personas confíen en lo que ven.</p>
-        <p>He trabajado en sectores como Talento Humano, Retail y Educación, y eso me enseñó que un buen modelo empieza por entender cómo opera el negocio, no por la herramienta. Cuando el modelo está bien hecho, todo lo demás fluye.</p>
-        <p>Fuera del trabajo cuido mis bonsáis, hago senderismo, me capacito en nail art y, cada vez que puedo, visito el mar — mi lugar favorito en el mundo.</p>
-        <a href="mailto:ambarsquintana@gmail.com" class="btn btn-primary">¿Hablamos?</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-top">
-    <div class="footer-col footer-about">
-      <h4 class="footer-name">Ambar <span class="accent-purple">Quintana</span></h4>
-      <p class="footer-role">Business Intelligence Developer</p>
-      <p class="footer-tagline">Construyo soluciones de datos que impulsan la toma de decisiones</p>
-      <div class="footer-social-icons">
-        <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i data-lucide="linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" aria-label="GitHub">
-          <i data-lucide="github" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:ambarsquintana@gmail.com" aria-label="Correo">
-          <i data-lucide="mail" aria-hidden="true"></i>
-        </a>
+<footer class="site-footer" id="contacto">
+  <div class="container footer-main">
+    <div class="footer-intro">
+      <p class="footer-eyebrow">Contacto</p>
+      <h2 class="footer-title">¿Tienes un reto de datos?<br><span>Conversemos.</span></h2>
+      <p class="footer-text">Si buscas convertir información dispersa en decisiones claras, me encantaría conocer tu proyecto.</p>
+    </div>
+    <div class="contact-list">
+      <div class="contact-row">
+        <span class="contact-label">Correo</span>
+        <a href="mailto:ambarsquintana@gmail.com" class="contact-value">ambarsquintana@gmail.com</a>
+        <span class="contact-end">
+          <button type="button" class="copy-email-btn" data-email="ambarsquintana@gmail.com" aria-label="Copiar correo" title="Copiar correo">
+            <i data-lucide="copy" class="icon-copy" aria-hidden="true"></i>
+            <i data-lucide="check" class="icon-check" aria-hidden="true"></i>
+          </button>
+          <i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i>
+        </span>
       </div>
-    </div>
-    <div class="footer-col footer-pages">
-      <h4>ENLACES</h4>
-      <a href="#perfil">Inicio</a>
-      <a href="#portafolio">Proyectos</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#certificaciones">Certificaciones</a>
-    </div>
-    <div class="footer-col footer-social">
-      <h4>CONTACTO</h4>
-      <p class="footer-contact-item"><i data-lucide="map-pin" aria-hidden="true"></i> Bogotá, Colombia</p>
-      <a href="mailto:ambarsquintana@gmail.com" class="footer-contact-item">
-        <i data-lucide="mail" aria-hidden="true"></i> ambarsquintana@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="footer-contact-item">
-        <i data-lucide="link" aria-hidden="true"></i> LinkedIn
-      </a>
-      <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="footer-contact-item">
-        <i data-lucide="github" aria-hidden="true"></i> GitHub
-      </a>
+      <div class="contact-row">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ambarsquintana/" target="_blank" rel="noopener" class="contact-value">/in/ambarsquintana</a>
+        <span class="contact-end"><i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">GitHub</span>
+        <a href="https://github.com/ambarsquintana" target="_blank" rel="noopener" class="contact-value">/ambarsquintana</a>
+        <span class="contact-end"><i data-lucide="arrow-up-right" class="contact-arrow" aria-hidden="true"></i></span>
+      </div>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p class="footer-copyright">© 2026 Ambar Quintana · Todos los derechos reservados</p>
+    <p class="footer-brand">Ambar Quintana · Business Intelligence Developer</p>
+    <nav class="footer-pages" aria-label="Enlaces del pie de página">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#portafolio">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#certificaciones">Certificaciones</a>
+    </nav>
+    <p class="footer-copyright">© 2026 Ambar Quintana</p>
     <button id="scroll-top" class="scroll-top-btn" type="button" aria-label="Volver arriba">
       <i data-lucide="arrow-up" aria-hidden="true"></i>
     </button>

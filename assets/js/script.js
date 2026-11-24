@@ -9,8 +9,62 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardVideos();
   initScrollSpy();
   initScrollTop();
+  initScrolledState();
+  initCopyEmail();
   initIcons();
 });
+
+/* ---------- Header border + scroll-top visibility once the page scrolls ---------- */
+function initScrolledState() {
+  const update = () => document.body.classList.toggle('is-scrolled', window.scrollY > 24);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+}
+
+/* ---------- Footer: copy email ---------- */
+function initCopyEmail() {
+  document.querySelectorAll('.copy-email-btn').forEach((btn) => {
+    const email = btn.dataset.email;
+    const label = btn.getAttribute('aria-label');
+
+    const fallbackCopy = () => {
+      const field = document.createElement('textarea');
+      field.value = email;
+      field.setAttribute('readonly', '');
+      field.style.position = 'absolute';
+      field.style.left = '-9999px';
+      document.body.appendChild(field);
+      field.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(field);
+      return ok;
+    };
+
+    btn.addEventListener('click', async () => {
+      let ok = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+          ok = true;
+        } else {
+          ok = fallbackCopy();
+        }
+      } catch (e) {
+        ok = fallbackCopy();
+      }
+      if (!ok) return;
+      btn.classList.add('is-copied');
+      btn.setAttribute('aria-label', 'Correo copiado');
+      btn.title = 'Correo copiado';
+      setTimeout(() => {
+        btn.classList.remove('is-copied');
+        btn.setAttribute('aria-label', label);
+        btn.title = label;
+      }, 2000);
+    });
+  });
+}
 
 /* ---------- Theme (dark / light) ---------- */
 function initThemeToggle() {
@@ -26,13 +80,13 @@ function initThemeToggle() {
   // Default to light when nothing is saved yet.
   const initialTheme = (saved === 'dark' || saved === 'light') ? saved : 'light';
   root.setAttribute('data-theme', initialTheme);
-  toggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
+  toggleBtn.setAttribute('aria-checked', String(initialTheme === 'dark'));
 
   toggleBtn.addEventListener('click', () => {
     const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
-    toggleBtn.setAttribute('aria-pressed', String(next === 'dark'));
+    toggleBtn.setAttribute('aria-checked', String(next === 'dark'));
     try { localStorage.setItem(STORAGE_KEY, next); } catch (e) { /* storage unavailable */ }
   });
 }
@@ -74,7 +128,7 @@ function initSmoothScroll() {
   });
 }
 
-/* ---------- Project cards: play video on hover ---------- */
+/* ---------- Project cards: the video stays on its first frame until hover ---------- */
 function initCardVideos() {
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
 
@@ -88,17 +142,7 @@ function initCardVideos() {
       if (playing && typeof playing.catch === 'function') playing.catch(() => {});
     });
 
-    // Show the video only once it is actually playing, so the image never flashes blank.
-    video.addEventListener('playing', () => {
-      if (card.matches(':hover')) {
-        card.classList.add('is-playing');
-      } else {
-        video.pause();
-      }
-    });
-
     card.addEventListener('mouseleave', () => {
-      card.classList.remove('is-playing');
       video.pause();
       if (video.readyState > 0) video.currentTime = 0;
     });
@@ -107,7 +151,8 @@ function initCardVideos() {
 
 /* ---------- Scroll-spy: highlight the active nav link ---------- */
 function initScrollSpy() {
-  const navLinks = Array.from(document.querySelectorAll('.main-nav a[href^="#"]'));
+  // Los enlaces con data-no-spy no se resaltan al hacer scroll (p. ej. en páginas de proyecto).
+  const navLinks = Array.from(document.querySelectorAll('.main-nav a[href^="#"]:not([data-no-spy])'));
   const footerLinks = Array.from(document.querySelectorAll('.footer-pages a[href^="#"]'));
   const allLinks = navLinks.concat(footerLinks);
   if (!navLinks.length || typeof IntersectionObserver === 'undefined') return;
@@ -116,6 +161,10 @@ function initScrollSpy() {
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
   if (!sections.length) return;
+
+  // El perfil no tiene enlace en el menú: al verlo, ningún enlace queda activo.
+  const hero = document.getElementById('perfil');
+  if (hero) sections.unshift(hero);
 
   const setActive = (id) => {
     allLinks.forEach((link) => {
@@ -136,8 +185,6 @@ function initScrollSpy() {
   );
 
   sections.forEach((section) => observer.observe(section));
-
-  setActive(sections[0].id);
 }
 
 /* ---------- Footer: scroll to top ---------- */
