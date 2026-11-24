@@ -2,50 +2,58 @@
 
 ![GitHub Pages](https://img.shields.io/badge/Status-Active-brightgreen) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-Portafolio profesional de **Ambar Quintana** — Business Intelligence Developer especializada en el Stack de datos de Microsoft.
+Portafolio profesional de **Ambar Quintana**, Business Intelligence Developer especializada en el stack de datos de Microsoft.
 
-> 🌐 **Sitio Web en Vivo:** [ambarsquintana.github.io](https://ambarsquintana.github.io)
+> 🌐 **Sitio web:** [ambarsquintana.github.io](https://ambarsquintana.github.io)
 
-Sitio web estático (*HTML + CSS + JS puro*, sin paso de compilación ni dependencias externas pesadas) desarrollado e iterado con asistencia de IA Generativa (Claude) para su despliegue directo en **GitHub Pages**.
+Sitio estático (*HTML + CSS + JS puro*, sin paso de compilación) desarrollado e iterado con asistencia de IA generativa (Claude) y publicado en **GitHub Pages**.
 
 ---
 
-## ⚙️ Estructura del Proyecto
+## ⚙️ Estructura del proyecto
 
 ```text
-├── index.html              # Estructura principal y contenido de todas las secciones
-├── css/
-│   └── styles.css          # Estilos globales, variables CSS (Modo Claro/Oscuro), layout y responsive
-├── js/
-│   └── script.js           # Lógica de UI: theme toggler, menú móvil, smooth scroll con offset,
-│                           # filtro de proyectos por categoría, scroll-spy y botón "Volver arriba"
-├── img/
-│   ├── fondo.svg           # Fondo decorativo de la sección Perfil (tema claro)
-│   ├── perfil.png          # Fotografía de perfil principal
-│   ├── proyecto_01.png ... # Capturas de pantalla de los proyectos
-│   └── icons/              # Tecnologías e íconos de la sección Habilidades
-└── README.md               # Documentación del proyecto
+├── index.html                      # Página principal con todas las secciones
+├── proyectos/
+│   └── accidentes-carreteras.html  # Página de detalle de cada proyecto
+├── assets/
+│   ├── css/
+│   │   ├── styles.css              # Estilos globales, variables (modo claro/oscuro), layout y responsive
+│   │   └── proyecto.css            # Estilos propios de las páginas de proyecto
+│   ├── js/
+│   │   └── script.js               # Tema, menú móvil, scroll suave, scroll-spy, videos de tarjetas,
+│   │                               # copiar correo y botón "Volver arriba"
+│   └── img/
+│       ├── perfil.jpg              # Foto de perfil (también se usa al compartir el enlace)
+│       ├── icono.png               # Logo y favicon
+│       ├── fondo.svg               # Fondo decorativo del perfil
+│       ├── icons/                  # Íconos de Habilidades y logos de Certificaciones
+│       ├── proyectos/              # Imagen de los proyectos en construcción
+│       └── accidentes-carreteras/  # Tarjeta, video y diagrama del proyecto
+└── README.md
 ```
 
 ---
 
-## 📍 Secciones del Sitio
+## 📍 Secciones del sitio
 
-* **Inicio (`#perfil`):** Hero section con foto de perfil, presentación principal, métricas de impacto (registros procesados, optimizaciones de rendimiento, años de experiencia) y enlaces a redes.
-* **Proyectos (`#portafolio`):** Cuadrícula de tarjetas con filtrado interactivo por tecnología. Cada tarjeta incluye captura, etiquetas, descripción y enlace directo al repositorio.
-* **Habilidades (`#habilidades`):** Grid de 12 tarjetas en disposición horizontal (*Ícono + Título + Descripción*) con las herramientas del stack técnico.
-* **Experiencia (`#experiencia`):** Línea de tiempo profesional interactiva con detalle de empresa, periodo, rol, modalidad y logros clave.
-* **Contacto (`#contacto`):** Bloque informativo "Sobre mí" y llamada a la acción para canales directos de comunicación.
-* **Pie de Página (`#site-footer`):** Navegación secundaria, atribución, accesos directos y botón flotante de retorno al encabezado (*Scroll to top*).
+* **Perfil (`#perfil`):** foto, presentación, métricas de impacto y accesos a contacto, proyectos y redes.
+* **Sobre mí (`#sobre-mi`):** enfoque de trabajo y trayectoria personal.
+* **Proyectos (`#portafolio`):** galería de tarjetas; cada proyecto publicado tiene su propia página en `proyectos/` con dashboard, caso de negocio, arquitectura, modelo de datos, decisiones técnicas y hallazgos.
+* **Experiencia (`#experiencia`):** trayectoria profesional con fechas, industria y logros.
+* **Habilidades (`#habilidades`):** herramientas y tecnologías del stack técnico.
+* **Certificaciones (`#certificaciones`):** credenciales con enlace a su verificación.
+* **Contacto (`#contacto`):** el footer funciona como sección de contacto, con correo, LinkedIn y GitHub.
 
 ---
 
-## 👩🏻‍💻 Notas Técnicas & Arquitectura
+## 👩🏻‍💻 Notas técnicas
 
-* **Iconografía:** Los íconos de la interfaz general (menú, flechas, acciones) se consumen desde la CDN de **Lucide Icons** mediante la inicialización dinámica `lucide.createIcons()`. Los íconos técnicos de la sección *Habilidades* son recursos vectoriales locales en `assets/img/icons/`.
-* **Tipografía:** Se utiliza **Inter**, importada directamente desde Google Fonts.
-* **Zero-Build Step:** No requiere `npm`, `webpack` ni ningún instalador de paquetes. Para probarlo localmente, basta con clonar el repositorio y abrir `index.html` en cualquier navegador o mediante la extensión *Live Server* de VS Code.
-* **Desplazamiento Preciso:** El script de *Smooth Scroll* calcula dinámicamente la altura del `#site-header` fijo para garantizar que las secciones no queden sobrepuestas tras la navegación por anclas.
+* **Íconos:** los de la interfaz vienen de **Lucide Icons** (CDN) y se inicializan con `lucide.createIcons()`. Los de Habilidades y Certificaciones son archivos locales en `assets/img/icons/`.
+* **Tipografía:** **Inter**, desde Google Fonts.
+* **Tema claro/oscuro:** respeta la preferencia del sistema y guarda la elección del usuario.
+* **Sin compilación:** no requiere `npm` ni empaquetadores. Para probarlo localmente basta con abrir `index.html` o usar la extensión *Live Server* de VS Code.
+* **Scroll preciso:** el scroll suave compensa la altura del encabezado fijo para que las secciones no queden tapadas.
 
 ---
 
@@ -53,4 +61,4 @@ Sitio web estático (*HTML + CSS + JS puro*, sin paso de compilación ni depende
 
 * **LinkedIn:** [linkedin.com/in/ambarsquintana](https://www.linkedin.com/in/ambarsquintana/)
 * **GitHub:** [github.com/ambarsquintana](https://github.com/ambarsquintana)
-* **Correo:** [ambarsquintana@gmail.com](mailto:ambarsquintana@gmail.com)
+* **Sitio web:** [ambarsquintana.github.io/#contacto](https://ambarsquintana.github.io/#contacto)
