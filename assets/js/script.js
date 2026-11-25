@@ -172,8 +172,37 @@ function initScrollSpy() {
     });
   };
 
+  // La última sección (Contacto) puede no llegar a la franja central de la pantalla:
+  // al llegar al final de la página se marca como activa.
+  const lastSection = sections[sections.length - 1];
+  const isAtBottom = () =>
+    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+  // Al hacer clic en un enlace, se marca esa sección y se ignora el scroll-spy
+  // hasta que termina el desplazamiento (Certificaciones y Contacto están muy cerca del final).
+  let locked = false;
+  let unlockTimer = null;
+  const scheduleUnlock = () => {
+    clearTimeout(unlockTimer);
+    unlockTimer = setTimeout(() => {
+      locked = false;
+      wasAtBottom = isAtBottom();
+    }, 150);
+  };
+
+  allLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const id = link.getAttribute('href').slice(1);
+      if (!document.getElementById(id)) return;
+      setActive(id);
+      locked = true;
+      scheduleUnlock();
+    });
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
+      if (locked || isAtBottom()) return;
       const visible = entries
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
@@ -185,6 +214,27 @@ function initScrollSpy() {
   );
 
   sections.forEach((section) => observer.observe(section));
+
+  let wasAtBottom = false;
+  const checkBottom = () => {
+    if (locked) {
+      scheduleUnlock();
+      return;
+    }
+    const atBottom = isAtBottom();
+    if (atBottom && !wasAtBottom) {
+      setActive(lastSection.id);
+    } else if (!atBottom && wasAtBottom) {
+      // Al subir desde el final, se vuelve a marcar la sección que ocupa la franja central.
+      const probe = window.innerHeight * 0.45;
+      const current = sections.filter((section) => section.getBoundingClientRect().top <= probe).pop();
+      if (current) setActive(current.id);
+    }
+    wasAtBottom = atBottom;
+  };
+  window.addEventListener('scroll', checkBottom, { passive: true });
+  window.addEventListener('resize', checkBottom);
+  checkBottom();
 }
 
 /* ---------- Footer: scroll to top ---------- */
