@@ -607,18 +607,21 @@ main > section:first-child { margin-top: calc(-1 * var(--header-h)); }
 }
 .project-link {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: var(--color-on-primary);
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color .15s ease;
+  /* Relleno fijo para que el resaltado no mueva el texto */
+  padding: 7px 12px;
+  margin-right: -12px;
+  border-radius: 999px;
+  transition: color .15s ease, background-color .15s ease;
 }
-.project-link svg { width: 17px; height: 17px; transition: transform .2s ease; }
-.project-card:hover .project-link { background: var(--color-primary-dark); }
+.project-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
+.project-card:hover .project-link { color: var(--color-primary-dark); background: #efebff; }
 .project-card:hover .project-link svg { transform: rotate(45deg); }
 
 /* Toda la tarjeta lleva al proyecto */
@@ -645,6 +648,39 @@ main > section:first-child { margin-top: calc(-1 * var(--header-h)); }
   box-shadow: 0 8px 18px rgba(91, 63, 207, 0.3);
 }
 .soon-badge svg { width: 15px; height: 15px; }
+/* Cierre de la tarjeta: sector a la izquierda, botón a la derecha */
+.project-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 0 12px;
+}
+/* Sector del dashboard bajo la descripción */
+.project-sector {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f1f0f5;
+  color: var(--color-text-secondary);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.project-sector svg { width: 13px; height: 13px; }
+:root[data-theme="dark"] .project-sector { background: rgba(255, 255, 255, 0.08); }
+:root[data-theme="dark"] .project-card:hover .project-link { background: rgba(169, 147, 247, 0.16); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .project-sector { background: rgba(255, 255, 255, 0.08); }
+  :root:not([data-theme="light"]) .project-card:hover .project-link { background: rgba(169, 147, 247, 0.16); }
+}
 
 /* ---------- Sobre mí ---------- */
 /* Mismas columnas que el perfil: la cita queda bajo la foto y el texto bajo la presentación */
@@ -880,6 +916,7 @@ main > section:first-child { margin-top: calc(-1 * var(--header-h)); }
   transition: color .15s ease;
 }
 .contact-value::after { content: ''; position: absolute; inset: 0; }
+span.contact-value::after { content: none; }
 .contact-end { display: flex; align-items: center; gap: 12px; pointer-events: none; }
 .contact-end .copy-email-btn { pointer-events: auto; }
 .contact-arrow { width: 20px; height: 20px; color: var(--color-primary); transition: transform .2s ease; }
